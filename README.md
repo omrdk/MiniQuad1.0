@@ -1,5 +1,6 @@
 Drone Preview  
 ![MiniQuad1.0](https://github.com/omrdk/MiniQuad1.0/tree/master/Media/Overview.jpeg)
+
 GUI Preview  
 ![MiniQuad1.0](https://github.com/omrdk/MiniQuad1.0/tree/master/Media/Cli-overview.png)
 <table>
@@ -38,5 +39,3 @@ GUI Preview
     <td>Barometer</td><td>BMP280</td>
   </tr>
 </table>
-=======
->>>>>>> b9dbdccb191684d9804d3fcc57835703a904bcd2
