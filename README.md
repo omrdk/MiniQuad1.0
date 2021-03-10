@@ -1,3 +1,5 @@
+Drone Preview  
+![MiniQuad1.0](https://github.com/omrdk/MiniQuad1.0/Media/Overview.jpeg)
 <table>
   <tr>
     <th>Type</th><th>Chipset</th>
