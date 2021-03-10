@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name QuadV100-rescue)(type Legacy)(uri ${KIPRJMOD}/QuadV100-rescue.lib)(options "")(descr ""))
+)

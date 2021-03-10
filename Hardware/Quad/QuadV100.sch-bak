@@ -1,0 +1,961 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date "22 mar 2019"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Salih_Symbol:C C1
+U 1 1 5C869605
+P 4400 2575
+F 0 "C1" V 4425 2375 25  0000 L CNN
+F 1 "100nF" V 4375 2325 25  0000 L CNN
+F 2 "SLH_Passive:SM0603_c" H 4400 2575 60  0001 C CNN
+F 3 "~" H 4400 2575 60  0000 C CNN
+F 4 "0.004" H -3825 600 50  0001 C CNN "$"
+	1    4400 2575
+	-1   0    0    1   
+$EndComp
+$Comp
+L Salih_Symbol:NDB-T2640 U1
+U 1 1 5ED01DD3
+P 3725 2450
+F 0 "U1" H 4000 2568 30  0000 C CNN
+F 1 "NDB-T2640" H 4000 2508 30  0000 C CNN
+F 2 "SLH_Others:RF_Module_CC2640" H 3725 2450 60  0001 C CNN
+F 3 "" H 3725 2450 60  0000 C CNN
+	1    3725 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Salih_Symbol:C C2
+U 1 1 5ED18F7C
+P 4500 2575
+F 0 "C2" V 4525 2375 25  0000 L CNN
+F 1 "10uF" V 4475 2325 25  0000 L CNN
+F 2 "SLH_Passive:SM0805_c" H 4500 2575 60  0001 C CNN
+F 3 "~" H 4500 2575 60  0000 C CNN
+F 4 "0.004" H -3725 600 50  0001 C CNN "$"
+	1    4500 2575
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4375 2525 4400 2525
+Wire Wire Line
+	4400 2525 4500 2525
+Connection ~ 4400 2525
+Wire Wire Line
+	4375 2625 4400 2625
+Wire Wire Line
+	4400 2625 4500 2625
+Connection ~ 4400 2625
+Text GLabel 4650 2525 2    30   UnSpc ~ 0
+Vbat
+Wire Wire Line
+	4650 2525 4500 2525
+Connection ~ 4500 2525
+Text GLabel 4650 2625 2    30   UnSpc ~ 0
+GND
+Wire Wire Line
+	4650 2625 4500 2625
+Connection ~ 4500 2625
+$Comp
+L Salih_Symbol:GY-91 U2
+U 1 1 5EDCAE95
+P 5975 2750
+F 0 "U2" H 6000 2825 30  0000 L CNN
+F 1 "GY-91" H 6275 2825 30  0000 L CNN
+F 2 "SLH_Others:GY-91" H 6175 2400 30  0001 C CNN
+F 3 "" H 5975 2750 60  0000 C CNN
+	1    5975 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Salih_Symbol:C C4
+U 1 1 5EDCC69F
+P 5675 2800
+F 0 "C4" V 5650 2825 25  0000 L CNN
+F 1 "100nF" V 5700 2625 25  0000 L CNN
+F 2 "SLH_Passive:SM0603_c" H 5675 2800 60  0001 C CNN
+F 3 "~" H 5675 2800 60  0000 C CNN
+F 4 "0.004" H -2550 825 50  0001 C CNN "$"
+	1    5675 2800
+	1    0    0    1   
+$EndComp
+$Comp
+L Salih_Symbol:C C3
+U 1 1 5EDCC6AA
+P 5600 2800
+F 0 "C3" V 5575 2825 25  0000 L CNN
+F 1 "10uF" V 5600 2625 25  0000 L CNN
+F 2 "SLH_Passive:SM0805_c" H 5600 2800 60  0001 C CNN
+F 3 "~" H 5600 2800 60  0000 C CNN
+F 4 "0.004" H -2625 825 50  0001 C CNN "$"
+	1    5600 2800
+	1    0    0    1   
+$EndComp
+Text GLabel 5525 2750 0    30   UnSpc ~ 0
+Vbat
+Text GLabel 5525 2950 0    30   UnSpc ~ 0
+GND
+Wire Wire Line
+	5675 2750 5875 2750
+Wire Wire Line
+	5675 2750 5600 2750
+Connection ~ 5675 2750
+Wire Wire Line
+	5525 2750 5600 2750
+Connection ~ 5600 2750
+$Comp
+L Salih_Symbol:C C5
+U 1 1 5EE6143C
+P 5875 2900
+F 0 "C5" V 5875 2750 25  0000 L CNN
+F 1 "100nF" V 5875 2625 25  0000 L CNN
+F 2 "SLH_Passive:SM0603_c" H 5875 2900 60  0001 C CNN
+F 3 "~" H 5875 2900 60  0000 C CNN
+F 4 "0.004" H -2350 925 50  0001 C CNN "$"
+	1    5875 2900
+	1    0    0    1   
+$EndComp
+Connection ~ 5875 2950
+$Comp
+L Salih_Symbol:CONN_02 JP2
+U 1 1 5EE62BAF
+P 6400 4100
+F 0 "JP2" V 6475 4150 30  0000 C CNN
+F 1 "CONN_02" V 6400 4150 30  0001 C CNN
+F 2 "SLH_Headers:Header_1x02_M_Vert_2.54_THT" H 6400 4100 60  0001 C CNN
+F 3 "" H 6400 4100 60  0000 C CNN
+F 4 "0" H 6400 4100 50  0001 C CNN "$"
+	1    6400 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Salih_Symbol:N_MOSFET Q1
+U 1 1 5EE63728
+P 5925 4025
+F 0 "Q1" V 5825 4050 30  0000 C CNN
+F 1 "BSS123" V 5875 4050 20  0000 C CNN
+F 2 "SLH_ICs:SOT23GDS" H 5925 4025 60  0001 C CNN
+F 3 "~" H 5925 4025 60  0000 C CNN
+F 4 "0.04" H -1800 325 50  0001 C CNN "$"
+	1    5925 4025
+	0    1    1    0   
+$EndComp
+$Comp
+L Salih_Symbol:R R3
+U 1 1 5EE63733
+P 5700 3950
+F 0 "R3" V 5750 3950 25  0000 C CNN
+F 1 "100R" V 5700 3950 25  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 3950 60  0001 C CNN
+F 3 "" H 5700 3950 60  0001 C CNN
+F 4 "0.003" H -1850 325 50  0001 C CNN "$"
+	1    5700 3950
+	0    -1   1    0   
+$EndComp
+$Comp
+L Salih_Symbol:R R4
+U 1 1 5EE6373E
+P 5700 4100
+F 0 "R4" V 5750 4100 25  0000 C CNN
+F 1 "10K" V 5700 4100 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 4100 60  0001 C CNN
+F 3 "" H 5700 4100 60  0001 C CNN
+F 4 "0.003" H -1775 400 50  0001 C CNN "$"
+	1    5700 4100
+	0    1    -1   0   
+$EndComp
+Text GLabel 5800 4900 3    30   UnSpc ~ 0
+GND
+Wire Wire Line
+	6250 4100 6025 4100
+Text GLabel 6175 3975 1    30   UnSpc ~ 0
+Vbat
+Wire Wire Line
+	6175 4000 6250 4000
+$Comp
+L Salih_Symbol:schottky D4
+U 1 1 5EEF483A
+P 6250 4100
+F 0 "D4" V 6200 4100 30  0000 R CNN
+F 1 "schottky" V 6270 4042 30  0001 R CNN
+F 2 "SLH_Passive:SOD123" H 6275 4100 60  0001 C CNN
+F 3 "" H 6275 4100 60  0000 C CNN
+	1    6250 4100
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6250 4100
+Connection ~ 6250 4000
+Text Label 5500 3950 0    30   ~ 0
+M1
+Wire Wire Line
+	6175 4000 6175 3975
+Wire Wire Line
+	5775 4100 5800 4100
+Wire Wire Line
+	5625 4100 5625 3950
+Wire Wire Line
+	5625 3950 5500 3950
+Connection ~ 5625 3950
+Wire Wire Line
+	5775 3950 5875 3950
+Text Notes 6425 3975 3    30   ~ 0
+Motor1
+$Comp
+L Salih_Symbol:CONN_02 JP3
+U 1 1 5F0393BD
+P 6400 4350
+F 0 "JP3" V 6475 4400 30  0000 C CNN
+F 1 "CONN_02" V 6400 4400 30  0001 C CNN
+F 2 "SLH_Headers:Header_1x02_M_Vert_2.54_THT" H 6400 4350 60  0001 C CNN
+F 3 "" H 6400 4350 60  0000 C CNN
+F 4 "0" H 6400 4350 50  0001 C CNN "$"
+	1    6400 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Salih_Symbol:N_MOSFET Q2
+U 1 1 5F0393C8
+P 5925 4275
+F 0 "Q2" V 5825 4300 30  0000 C CNN
+F 1 "BSS123" V 5875 4300 20  0000 C CNN
+F 2 "SLH_ICs:SOT23GDS" H 5925 4275 60  0001 C CNN
+F 3 "~" H 5925 4275 60  0000 C CNN
+F 4 "0.04" H -1800 575 50  0001 C CNN "$"
+	1    5925 4275
+	0    1    1    0   
+$EndComp
+$Comp
+L Salih_Symbol:R R5
+U 1 1 5F0393D3
+P 5700 4200
+F 0 "R5" V 5750 4200 25  0000 C CNN
+F 1 "100R" V 5700 4200 25  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 4200 60  0001 C CNN
+F 3 "" H 5700 4200 60  0001 C CNN
+F 4 "0.003" H -1850 575 50  0001 C CNN "$"
+	1    5700 4200
+	0    -1   1    0   
+$EndComp
+$Comp
+L Salih_Symbol:R R6
+U 1 1 5F0393DE
+P 5700 4350
+F 0 "R6" V 5750 4350 25  0000 C CNN
+F 1 "10K" V 5700 4350 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 4350 60  0001 C CNN
+F 3 "" H 5700 4350 60  0001 C CNN
+F 4 "0.003" H -1775 650 50  0001 C CNN "$"
+	1    5700 4350
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	6250 4350 6025 4350
+Wire Wire Line
+	6175 4250 6250 4250
+$Comp
+L Salih_Symbol:schottky D5
+U 1 1 5F0393EA
+P 6250 4350
+F 0 "D5" V 6200 4350 30  0000 R CNN
+F 1 "schottky" V 6270 4292 30  0001 R CNN
+F 2 "SLH_Passive:SOD123" H 6275 4350 60  0001 C CNN
+F 3 "" H 6275 4350 60  0000 C CNN
+	1    6250 4350
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6250 4350
+Connection ~ 6250 4250
+Text Label 5500 4200 0    30   ~ 0
+M2
+Wire Wire Line
+	5775 4350 5800 4350
+Wire Wire Line
+	5625 4350 5625 4200
+Wire Wire Line
+	5625 4200 5500 4200
+Connection ~ 5625 4200
+Wire Wire Line
+	5775 4200 5875 4200
+Text Notes 6425 4225 3    30   ~ 0
+Motor2
+$Comp
+L Salih_Symbol:CONN_02 JP4
+U 1 1 5F04CC19
+P 6400 4600
+F 0 "JP4" V 6475 4650 30  0000 C CNN
+F 1 "CONN_02" V 6400 4650 30  0001 C CNN
+F 2 "SLH_Headers:Header_1x02_M_Vert_2.54_THT" H 6400 4600 60  0001 C CNN
+F 3 "" H 6400 4600 60  0000 C CNN
+F 4 "0" H 6400 4600 50  0001 C CNN "$"
+	1    6400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Salih_Symbol:N_MOSFET Q3
+U 1 1 5F04CC24
+P 5925 4525
+F 0 "Q3" V 5825 4550 30  0000 C CNN
+F 1 "BSS123" V 5875 4550 20  0000 C CNN
+F 2 "SLH_ICs:SOT23GDS" H 5925 4525 60  0001 C CNN
+F 3 "~" H 5925 4525 60  0000 C CNN
+F 4 "0.04" H -1800 825 50  0001 C CNN "$"
+	1    5925 4525
+	0    1    1    0   
+$EndComp
+$Comp
+L Salih_Symbol:R R7
+U 1 1 5F04CC2F
+P 5700 4450
+F 0 "R7" V 5750 4450 25  0000 C CNN
+F 1 "100R" V 5700 4450 25  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 4450 60  0001 C CNN
+F 3 "" H 5700 4450 60  0001 C CNN
+F 4 "0.003" H -1850 825 50  0001 C CNN "$"
+	1    5700 4450
+	0    -1   1    0   
+$EndComp
+$Comp
+L Salih_Symbol:R R8
+U 1 1 5F04CC3A
+P 5700 4600
+F 0 "R8" V 5750 4600 25  0000 C CNN
+F 1 "10K" V 5700 4600 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 4600 60  0001 C CNN
+F 3 "" H 5700 4600 60  0001 C CNN
+F 4 "0.003" H -1775 900 50  0001 C CNN "$"
+	1    5700 4600
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	6250 4600 6025 4600
+Wire Wire Line
+	6175 4500 6250 4500
+$Comp
+L Salih_Symbol:schottky D6
+U 1 1 5F04CC46
+P 6250 4600
+F 0 "D6" V 6200 4600 30  0000 R CNN
+F 1 "schottky" V 6270 4542 30  0001 R CNN
+F 2 "SLH_Passive:SOD123" H 6275 4600 60  0001 C CNN
+F 3 "" H 6275 4600 60  0000 C CNN
+	1    6250 4600
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6250 4600
+Connection ~ 6250 4500
+Text Label 5500 4450 0    30   ~ 0
+M3
+Wire Wire Line
+	5775 4600 5800 4600
+Wire Wire Line
+	5625 4600 5625 4450
+Wire Wire Line
+	5625 4450 5500 4450
+Connection ~ 5625 4450
+Wire Wire Line
+	5775 4450 5875 4450
+Text Notes 6425 4475 3    30   ~ 0
+Motor3
+$Comp
+L Salih_Symbol:CONN_02 JP5
+U 1 1 5F04CC5A
+P 6400 4850
+F 0 "JP5" V 6475 4900 30  0000 C CNN
+F 1 "CONN_02" V 6400 4900 30  0001 C CNN
+F 2 "SLH_Headers:Header_1x02_M_Vert_2.54_THT" H 6400 4850 60  0001 C CNN
+F 3 "" H 6400 4850 60  0000 C CNN
+F 4 "0" H 6400 4850 50  0001 C CNN "$"
+	1    6400 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Salih_Symbol:N_MOSFET Q4
+U 1 1 5F04CC65
+P 5925 4775
+F 0 "Q4" V 5825 4800 30  0000 C CNN
+F 1 "BSS123" V 5875 4800 20  0000 C CNN
+F 2 "SLH_ICs:SOT23GDS" H 5925 4775 60  0001 C CNN
+F 3 "~" H 5925 4775 60  0000 C CNN
+F 4 "0.04" H -1800 1075 50  0001 C CNN "$"
+	1    5925 4775
+	0    1    1    0   
+$EndComp
+$Comp
+L Salih_Symbol:R R9
+U 1 1 5F04CC70
+P 5700 4700
+F 0 "R9" V 5750 4700 25  0000 C CNN
+F 1 "100R" V 5700 4700 25  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 4700 60  0001 C CNN
+F 3 "" H 5700 4700 60  0001 C CNN
+F 4 "0.003" H -1850 1075 50  0001 C CNN "$"
+	1    5700 4700
+	0    -1   1    0   
+$EndComp
+$Comp
+L Salih_Symbol:R R10
+U 1 1 5F04CC7B
+P 5700 4850
+F 0 "R10" V 5750 4850 25  0000 C CNN
+F 1 "10K" V 5700 4850 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 4850 60  0001 C CNN
+F 3 "" H 5700 4850 60  0001 C CNN
+F 4 "0.003" H -1775 1150 50  0001 C CNN "$"
+	1    5700 4850
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	6250 4850 6025 4850
+Wire Wire Line
+	6175 4750 6250 4750
+$Comp
+L Salih_Symbol:schottky D7
+U 1 1 5F04CC87
+P 6250 4850
+F 0 "D7" V 6200 4850 30  0000 R CNN
+F 1 "schottky" V 6270 4792 30  0001 R CNN
+F 2 "SLH_Passive:SOD123" H 6275 4850 60  0001 C CNN
+F 3 "" H 6275 4850 60  0000 C CNN
+	1    6250 4850
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6250 4850
+Connection ~ 6250 4750
+Wire Wire Line
+	5775 4850 5800 4850
+Wire Wire Line
+	5625 4850 5625 4700
+Wire Wire Line
+	5625 4700 5500 4700
+Connection ~ 5625 4700
+Wire Wire Line
+	5775 4700 5875 4700
+Text Notes 6425 4725 3    30   ~ 0
+Motor4
+Wire Wire Line
+	6175 4000 6175 4250
+Connection ~ 6175 4000
+Wire Wire Line
+	6175 4250 6175 4500
+Connection ~ 6175 4250
+Connection ~ 6175 4500
+Wire Wire Line
+	6175 4500 6175 4750
+Wire Wire Line
+	5800 4900 5800 4850
+Connection ~ 5800 4850
+Wire Wire Line
+	5800 4850 5825 4850
+Wire Wire Line
+	5800 4850 5800 4600
+Connection ~ 5800 4600
+Wire Wire Line
+	5800 4600 5825 4600
+Wire Wire Line
+	5800 4600 5800 4350
+Connection ~ 5800 4350
+Wire Wire Line
+	5800 4350 5825 4350
+Wire Wire Line
+	5800 4350 5800 4100
+Connection ~ 5800 4100
+Wire Wire Line
+	5800 4100 5825 4100
+$Comp
+L Salih_Symbol:R R1
+U 1 1 5F11A97D
+P 5650 3650
+F 0 "R1" V 5675 3550 25  0000 C CNN
+F 1 "3K3" V 5650 3650 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5650 3650 60  0001 C CNN
+F 3 "" H 5650 3650 60  0001 C CNN
+F 4 "0.003" H -1825 -50 50  0001 C CNN "$"
+	1    5650 3650
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	5875 3050 5650 3050
+Wire Wire Line
+	5875 3150 5700 3150
+Wire Wire Line
+	5875 3250 5775 3250
+Wire Wire Line
+	5875 3350 5825 3350
+Wire Wire Line
+	5875 3450 5525 3450
+$Comp
+L Salih_Symbol:R R2
+U 1 1 5F184938
+P 5700 3650
+F 0 "R2" V 5725 3550 25  0000 C CNN
+F 1 "3K3" V 5700 3650 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5700 3650 60  0001 C CNN
+F 3 "" H 5700 3650 60  0001 C CNN
+F 4 "0.003" H -1775 -50 50  0001 C CNN "$"
+	1    5700 3650
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	5650 3575 5650 3050
+Connection ~ 5650 3050
+Wire Wire Line
+	5650 3050 5525 3050
+Wire Wire Line
+	5700 3575 5700 3150
+Connection ~ 5700 3150
+Wire Wire Line
+	5700 3150 5525 3150
+$Comp
+L Salih_Symbol:R R11
+U 1 1 5F1AF609
+P 5775 3650
+F 0 "R11" V 5800 3550 25  0000 C CNN
+F 1 "3K3" V 5775 3650 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5775 3650 60  0001 C CNN
+F 3 "" H 5775 3650 60  0001 C CNN
+F 4 "0.003" H -1700 -50 50  0001 C CNN "$"
+	1    5775 3650
+	1    0    0    1   
+$EndComp
+$Comp
+L Salih_Symbol:R R12
+U 1 1 5F1AF912
+P 5825 3650
+F 0 "R12" V 5850 3550 25  0000 C CNN
+F 1 "3K3" V 5825 3650 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5825 3650 60  0001 C CNN
+F 3 "" H 5825 3650 60  0001 C CNN
+F 4 "0.003" H -1650 -50 50  0001 C CNN "$"
+	1    5825 3650
+	1    0    0    1   
+$EndComp
+$Comp
+L Salih_Symbol:R R13
+U 1 1 5F1AFADD
+P 5875 3650
+F 0 "R13" V 5900 3550 25  0000 C CNN
+F 1 "3K3" V 5875 3650 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 5875 3650 60  0001 C CNN
+F 3 "" H 5875 3650 60  0001 C CNN
+F 4 "0.003" H -1600 -50 50  0001 C CNN "$"
+	1    5875 3650
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	5875 3575 5875 3450
+Connection ~ 5875 3450
+Wire Wire Line
+	5825 3575 5825 3350
+Connection ~ 5825 3350
+Wire Wire Line
+	5825 3350 5525 3350
+Wire Wire Line
+	5775 3575 5775 3250
+Connection ~ 5775 3250
+Wire Wire Line
+	5775 3250 5525 3250
+Wire Wire Line
+	5700 3725 5650 3725
+Wire Wire Line
+	5775 3725 5825 3725
+Wire Wire Line
+	5825 3725 5875 3725
+Connection ~ 5825 3725
+Wire Wire Line
+	5525 2950 5600 2950
+Wire Wire Line
+	5675 2850 5675 2950
+Connection ~ 5675 2950
+Wire Wire Line
+	5675 2950 5875 2950
+Wire Wire Line
+	5600 2850 5600 2950
+Connection ~ 5600 2950
+Wire Wire Line
+	5600 2950 5675 2950
+Text GLabel 5850 2850 0    30   UnSpc ~ 0
+3V3
+Wire Wire Line
+	5850 2850 5875 2850
+Connection ~ 5875 2850
+Text GLabel 5600 3725 0    30   UnSpc ~ 0
+3V3
+Wire Wire Line
+	5600 3725 5650 3725
+Connection ~ 5650 3725
+Text GLabel 5925 3725 2    30   UnSpc ~ 0
+GND
+Wire Wire Line
+	5925 3725 5875 3725
+Connection ~ 5875 3725
+Text Label 5525 3050 0    30   ~ 0
+SCL
+Text Label 5525 3150 0    30   ~ 0
+SDA
+Text Label 5525 3250 0    30   ~ 0
+SDO
+Text Label 5525 3350 0    30   ~ 0
+NCS
+Text Label 5525 3450 0    30   ~ 0
+CSB
+$Comp
+L Salih_Symbol:LED D1
+U 1 1 5F2D3033
+P 3150 2775
+F 0 "D1" H 3225 2800 25  0000 C CNN
+F 1 "GRN" H 3225 2750 25  0000 C CNN
+F 2 "SLH_Passive:LED-0805" H 3150 2775 60  0001 C CNN
+F 3 "~" H 3150 2775 60  0000 C CNN
+F 4 "0.008" H -2725 -25 50  0001 C CNN "$"
+	1    3150 2775
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Salih_Symbol:R R14
+U 1 1 5F2D303E
+P 3350 2775
+F 0 "R14" V 3325 2875 25  0000 C CNN
+F 1 "2K0" V 3350 2775 25  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 3350 2775 60  0001 C CNN
+F 3 "" H 3350 2775 60  0001 C CNN
+F 4 "0.003" H -2325 -25 50  0001 C CNN "$"
+	1    3350 2775
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	3275 2775 3200 2775
+Wire Wire Line
+	3100 2775 3025 2775
+$Comp
+L Salih_Symbol:LED D2
+U 1 1 5F2EBACE
+P 3150 2850
+F 0 "D2" H 3225 2825 25  0000 C CNN
+F 1 "GRN" H 3100 2825 25  0000 C CNN
+F 2 "SLH_Passive:LED-0805" H 3150 2850 60  0001 C CNN
+F 3 "~" H 3150 2850 60  0000 C CNN
+F 4 "0.008" H -2725 50  50  0001 C CNN "$"
+	1    3150 2850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Salih_Symbol:R R15
+U 1 1 5F2EBAD9
+P 3350 2850
+F 0 "R15" V 3325 2950 25  0000 C CNN
+F 1 "2K0" V 3350 2850 25  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 3350 2850 60  0001 C CNN
+F 3 "" H 3350 2850 60  0001 C CNN
+F 4 "0.003" H -2325 50  50  0001 C CNN "$"
+	1    3350 2850
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	3275 2850 3200 2850
+Wire Wire Line
+	3100 2850 3025 2850
+Text GLabel 2975 2850 0    30   UnSpc ~ 0
+GND
+Text Label 5500 4700 0    30   ~ 0
+M4
+$Comp
+L Salih_Symbol:CONN_02 JP1
+U 1 1 5F3B23A7
+P 3475 4800
+F 0 "JP1" V 3550 4850 30  0000 C CNN
+F 1 "CONN_02" V 3475 4850 30  0001 C CNN
+F 2 "SLH_Headers:Header_1x02_M_Vert_2.54_THT" H 3475 4800 60  0001 C CNN
+F 3 "" H 3475 4800 60  0000 C CNN
+F 4 "0" H 3475 4800 50  0001 C CNN "$"
+	1    3475 4800
+	-1   0    0    -1  
+$EndComp
+Text Notes 3500 4675 3    30   ~ 0
+Battery
+Text GLabel 3700 4700 2    30   UnSpc ~ 0
+Vbat
+Wire Wire Line
+	3625 4700 3700 4700
+Text GLabel 3700 4800 2    30   UnSpc ~ 0
+GND
+Wire Wire Line
+	3700 4800 3625 4800
+$Comp
+L Salih_Symbol:C C6
+U 1 1 5ED4ABE8
+P 6125 4000
+F 0 "C6" V 6050 3950 25  0000 L CNN
+F 1 "10uF" V 6075 3950 25  0000 L CNN
+F 2 "SLH_Passive:SM0805_c" H 6125 4000 60  0001 C CNN
+F 3 "~" H 6125 4000 60  0000 C CNN
+F 4 "0.004" H -2100 2025 50  0001 C CNN "$"
+	1    6125 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Salih_Symbol:C C7
+U 1 1 5ED4CCBC
+P 6125 4250
+F 0 "C7" V 6175 4225 25  0000 L CNN
+F 1 "10uF" V 6075 4200 25  0000 L CNN
+F 2 "SLH_Passive:SM0805_c" H 6125 4250 60  0001 C CNN
+F 3 "~" H 6125 4250 60  0000 C CNN
+F 4 "0.004" H -2100 2275 50  0001 C CNN "$"
+	1    6125 4250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Salih_Symbol:C C8
+U 1 1 5ED4D1CF
+P 6125 4500
+F 0 "C8" V 6175 4475 25  0000 L CNN
+F 1 "10uF" V 6075 4450 25  0000 L CNN
+F 2 "SLH_Passive:SM0805_c" H 6125 4500 60  0001 C CNN
+F 3 "~" H 6125 4500 60  0000 C CNN
+F 4 "0.004" H -2100 2525 50  0001 C CNN "$"
+	1    6125 4500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Salih_Symbol:C C9
+U 1 1 5ED4D7A8
+P 6125 4750
+F 0 "C9" V 6175 4725 25  0000 L CNN
+F 1 "10uF" V 6075 4700 25  0000 L CNN
+F 2 "SLH_Passive:SM0805_c" H 6125 4750 60  0001 C CNN
+F 3 "~" H 6125 4750 60  0000 C CNN
+F 4 "0.004" H -2100 2775 50  0001 C CNN "$"
+	1    6125 4750
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6175 4750
+Wire Wire Line
+	6075 4750 6075 4500
+Connection ~ 6075 4000
+Wire Wire Line
+	6075 4000 6075 3975
+Connection ~ 6075 4250
+Wire Wire Line
+	6075 4250 6075 4000
+Connection ~ 6075 4500
+Wire Wire Line
+	6075 4500 6075 4250
+Text GLabel 6075 3975 1    30   UnSpc ~ 0
+GND
+Wire Wire Line
+	3625 3150 3450 3150
+Text Label 3100 3075 0    30   ~ 0
+SCL
+Text Label 3100 3150 0    30   ~ 0
+SDA
+Wire Wire Line
+	3450 3075 3625 3075
+$Comp
+L Salih_Symbol:CONN_05 JP6
+U 1 1 5ED7746D
+P 2900 2350
+F 0 "JP6" H 2950 2125 30  0000 C CNN
+F 1 "CONN_05" V 2900 2400 30  0001 C CNN
+F 2 "SLH_Headers:Header_1x05_M_Vert_2.54_THT" H 2900 2350 60  0001 C CNN
+F 3 "" H 2900 2350 60  0000 C CNN
+F 4 "0" H 2900 2350 50  0001 C CNN "$"
+	1    2900 2350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3625 2600 3000 2600
+Wire Wire Line
+	3625 2525 3000 2525
+Wire Wire Line
+	3000 2525 3000 2500
+Wire Wire Line
+	3000 2400 3075 2400
+Wire Wire Line
+	3075 2400 3075 2475
+Wire Wire Line
+	3075 2675 3625 2675
+Text GLabel 3275 2200 2    30   UnSpc ~ 0
+GND
+Text GLabel 3275 2300 2    30   UnSpc ~ 0
+Vbat
+Wire Wire Line
+	3000 2300 3225 2300
+Wire Wire Line
+	3000 2200 3275 2200
+$Comp
+L Salih_Symbol:R R17
+U 1 1 5ED8C4E8
+P 3150 2400
+F 0 "R17" V 3100 2400 25  0000 C CNN
+F 1 "100K" V 3150 2400 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 3150 2400 60  0001 C CNN
+F 3 "" H 3150 2400 60  0001 C CNN
+F 4 "0.003" H -4325 -1300 50  0001 C CNN "$"
+	1    3150 2400
+	0    -1   1    0   
+$EndComp
+Connection ~ 3075 2400
+Wire Wire Line
+	3225 2400 3225 2300
+Connection ~ 3225 2300
+Wire Wire Line
+	3225 2300 3275 2300
+$Comp
+L Salih_Symbol:C C10
+U 1 1 5ED9542F
+P 3150 2475
+F 0 "C10" V 3175 2375 25  0000 L CNN
+F 1 "100nF" V 3075 2400 25  0000 L CNN
+F 2 "SLH_Passive:SM0603_c" H 3150 2475 60  0001 C CNN
+F 3 "~" H 3150 2475 60  0000 C CNN
+F 4 "0.004" H -5075 500 50  0001 C CNN "$"
+	1    3150 2475
+	0    -1   -1   0   
+$EndComp
+Text GLabel 3275 2475 2    30   UnSpc ~ 0
+GND
+$Comp
+L Salih_Symbol:R R20
+U 1 1 5ED9A03C
+P 3350 3525
+F 0 "R20" V 3375 3425 25  0000 C CNN
+F 1 "0R" V 3350 3525 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 3350 3525 60  0001 C CNN
+F 3 "" H 3350 3525 60  0001 C CNN
+F 4 "0.003" H -4125 -175 50  0001 C CNN "$"
+	1    3350 3525
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	3275 3525 3100 3525
+Text Label 3100 3525 0    30   ~ 0
+SCL
+$Comp
+L Salih_Symbol:R R19
+U 1 1 5EDA2B72
+P 3350 3450
+F 0 "R19" V 3375 3350 25  0000 C CNN
+F 1 "0R" V 3350 3450 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 3350 3450 60  0001 C CNN
+F 3 "" H 3350 3450 60  0001 C CNN
+F 4 "0.003" H -4125 -250 50  0001 C CNN "$"
+	1    3350 3450
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	3275 3450 3100 3450
+Text Label 3100 3450 0    30   ~ 0
+SDA
+$Comp
+L Salih_Symbol:R R18
+U 1 1 5EDA6BEF
+P 3350 3375
+F 0 "R18" V 3375 3275 25  0000 C CNN
+F 1 "0R" V 3350 3375 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 3350 3375 60  0001 C CNN
+F 3 "" H 3350 3375 60  0001 C CNN
+F 4 "0.003" H -4125 -325 50  0001 C CNN "$"
+	1    3350 3375
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	3275 3375 3100 3375
+Text Label 3100 3375 0    30   ~ 0
+SDO
+Wire Wire Line
+	3425 3375 3625 3375
+Wire Wire Line
+	3425 3450 3625 3450
+Wire Wire Line
+	3425 3525 3625 3525
+Text Label 3450 3525 0    30   ~ 0
+CLK
+Text Label 3450 3450 0    30   ~ 0
+MOSI
+Text Label 3450 3375 0    30   ~ 0
+MISO
+Wire Wire Line
+	3625 3600 3450 3600
+Text Label 3450 3675 0    30   ~ 0
+NCS
+Text Label 3450 3600 0    30   ~ 0
+CSB
+Wire Wire Line
+	3450 3675 3625 3675
+Text Label 3450 3225 0    30   ~ 0
+M3
+Wire Wire Line
+	3625 3225 3450 3225
+Text Label 3450 3300 0    30   ~ 0
+M4
+Wire Wire Line
+	3625 3300 3450 3300
+Text Label 4550 3825 2    30   ~ 0
+M2
+Wire Wire Line
+	4375 3825 4550 3825
+Text Label 4550 3900 2    30   ~ 0
+M1
+Wire Wire Line
+	4375 3900 4550 3900
+Wire Wire Line
+	3100 2475 3075 2475
+Connection ~ 3075 2475
+Wire Wire Line
+	3075 2475 3075 2675
+Wire Wire Line
+	3200 2475 3275 2475
+Wire Wire Line
+	2975 2850 3025 2850
+Text Label 3450 2775 0    30   ~ 0
+LED1
+Text Label 3450 2850 0    30   ~ 0
+LED2
+Connection ~ 3025 2850
+Wire Wire Line
+	3025 2775 3025 2850
+Wire Wire Line
+	3425 2775 3625 2775
+Wire Wire Line
+	3425 2850 3625 2850
+$Comp
+L Salih_Symbol:R R102
+U 1 1 5ED53A97
+P 3375 3150
+F 0 "R102" V 3400 3050 25  0000 C CNN
+F 1 "0R" V 3375 3150 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 3375 3150 60  0001 C CNN
+F 3 "" H 3375 3150 60  0001 C CNN
+F 4 "0.003" H -4100 -550 50  0001 C CNN "$"
+	1    3375 3150
+	0    1    -1   0   
+$EndComp
+$Comp
+L Salih_Symbol:R R101
+U 1 1 5ED53AA2
+P 3375 3075
+F 0 "R101" V 3400 2975 25  0000 C CNN
+F 1 "0R" V 3375 3075 20  0000 C CNN
+F 2 "SLH_Passive:SM0603_r" H 3375 3075 60  0001 C CNN
+F 3 "" H 3375 3075 60  0001 C CNN
+F 4 "0.003" H -4100 -625 50  0001 C CNN "$"
+	1    3375 3075
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	3300 3150 3100 3150
+Wire Wire Line
+	3300 3075 3100 3075
+$EndSCHEMATC

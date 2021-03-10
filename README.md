@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Type</th><th>Chipset</th>
+  </tr>
+  <tr>
+    <td>MCU</td><td>CC2640@48MHz</td>
+  </tr>
+  <tr>
+    <td>Accelerometer</td><td>MPU9250</td>
+  </tr>
+  <tr>
+    <td>Gyro</td><td>MPU9250</td>
+  </tr>
+  <tr>
+    <td>Barometer</td><td>BMP280</td>
+  </tr>
+</table>
