@@ -1,10 +1,7 @@
 Drone Preview  
 ![MiniQuad1.0](https://github.com/omrdk/MiniQuad1.0/tree/master/Media/Overview.jpeg)
-<<<<<<< HEAD
 GUI Preview  
 ![MiniQuad1.0](https://github.com/omrdk/MiniQuad1.0/tree/master/Media/Cli-overview.png)
-=======
->>>>>>> b9dbdccb191684d9804d3fcc57835703a904bcd2
 <table>
   <tr>
     <th>Type</th><th>Chipset</th>
