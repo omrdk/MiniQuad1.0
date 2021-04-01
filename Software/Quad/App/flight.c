@@ -63,7 +63,7 @@ F32     yawL = 0,pitL = 0,rolL = 0;
 F32     yawO=0,pitO=0,rolO=0,altO=0, thrust = 0;
 F32     fZRO=0;
 U16     ofs = 0;
-F32 altitude;
+F32     altitude;
 struct bmp280_dev bmp;
 struct bmp280_config conf;
 struct bmp280_uncomp_data ucomp_data;
@@ -132,32 +132,12 @@ F32 m_fr = 0, m_fl=0, m_br=0, m_bl=0;
 
 void Set_Duty()
 {
-  /*
-  m_fr = thrust + yawL + pitL + rolL; if(m_fr>1000)m_fr=1000; if(m_fr<0)m_fr=0;
-  m_fl = thrust - yawL + pitL - rolL; if(m_fl>1000)m_fl=1000; if(m_fl<0)m_fl=0;
-  m_br = thrust - yawL - pitL + rolL; if(m_br>1000)m_br=1000; if(m_br<0)m_br=0;
-  m_bl = thrust + yawL - pitL - rolL; if(m_bl>1000)m_bl=1000; if(m_bl<0)m_bl=0;
-  */
-
-/*// This is for self motor test
-  PWM_setDuty(pwm1,DC_SCL(m_fr));   // FRONT RIGHT
-  PWM_setDuty(pwm2,DC_SCL(m_br));   // BACK  RIGHT
-  PWM_setDuty(pwm3,DC_SCL(m_bl));   // BACK  LEFT
-  PWM_setDuty(pwm4,DC_SCL(m_fl));   // FRONT LEFT
-*/
-
-
   U08 s=rf_rxbuf[2];
   if(s == 1)
   { F32 err_yaw, err_pitch, err_roll; // PID çıkışları
-    //m_fl = out + err_yaw + err_pitch + err_roll; DC_LIM(m_fr);
-    //m_fr = out - err_yaw + err_pitch - err_roll; DC_LIM(m_fl);
-    //m_bl = out - err_yaw - err_pitch + err_roll; DC_LIM(m_br);
-    //m_br = out + err_yaw - err_pitch - err_roll; DC_LIM(m_bl);
 
-
-    PID_Exe(&pid_R); //PID_Exe(&pid_Y);PID_Exe(&pid_P);
-    err_roll=pid_R.y; err_yaw=0; err_pitch=0;        // pid_R'nin çıkardığı y değeri hatadır.
+    PID_Exe(&pid_R); PID_Exe(&pid_Y); PID_Exe(&pid_P);
+    err_roll=pid_R.y; err_yaw=pid_Y.y; err_pitch=pid_P.y;        // pid_R'nin çıkardığı y değeri hatadır.
     m_fl = out + err_yaw + err_pitch + err_roll; DC_LIM(m_fr);
     m_fr = out - err_yaw + err_pitch - err_roll; DC_LIM(m_fl);
     m_bl = out - err_yaw - err_pitch + err_roll; DC_LIM(m_br);
