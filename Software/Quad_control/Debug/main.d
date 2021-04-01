@@ -227,8 +227,8 @@ main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2
 main.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/stdlib.h
 main.obj: ../easylink/easylink_config.h
 main.obj: /home/merdak/KOLTEST/TIV10/Quad_control/koltypes.h
-main.obj: ../radio.h
-main.obj: ../uart.h
+main.obj: ../App/radio.h
+main.obj: ../App/uart.h
 
 ../main.c: 
 /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/std.h: 
@@ -457,5 +457,5 @@ main.obj: ../uart.h
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/stdlib.h: 
 ../easylink/easylink_config.h: 
 /home/merdak/KOLTEST/TIV10/Quad_control/koltypes.h: 
-../radio.h: 
-../uart.h: 
+../App/radio.h: 
+../App/uart.h: 

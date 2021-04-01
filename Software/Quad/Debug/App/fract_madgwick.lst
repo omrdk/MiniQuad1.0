@@ -1,0 +1,1272 @@
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    1
+
+       1                    ;******************************************************************************
+       2                    ;* TI ARM G3 C/C++ Codegen                                          Unix v20.2.4.LTS *
+       3                    ;* Date/Time created: Fri Apr  2 01:02:08 2021                                *
+       4                    ;******************************************************************************
+       5                            .compiler_opts --abi=eabi --arm_vmrs_si_workaround=off --code_state=16 --diag_wrap=off --embed
+       6 00000000                   .thumb
+       7                    
+       8                    $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       9                            .dwattr $C$DW$CU, DW_AT_name("../App/fract_madgwick.c")
+      10                            .dwattr $C$DW$CU, DW_AT_producer("TI TI ARM G3 C/C++ Codegen Unix v20.2.4.LTS Copyright (c) 19
+      11                            .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      12                            .dwattr $C$DW$CU, DW_AT_comp_dir("/home/merdak/KOLTEST/TIV10/Quad/Debug")
+      13                            .global q
+      14 00000000                   .sect   ".data:q", RW
+      15                            .align  4
+      16                            .elfsym q,SYM_SIZE(16)
+      17 00000000           q:
+      18 00000000 00000001          .bits           0x1,32
+      19                                            ; q[0] @ 0
+      20 00000004 00000000          .bits           0,32
+      21                                            ; q[1] @ 32
+      22 00000008 00000000          .bits           0,32
+      23                                            ; q[2] @ 64
+      24 0000000c 00000000          .bits           0,32
+      25                                            ; q[3] @ 96
+      26                    
+      27                    $C$DW$1 .dwtag  DW_TAG_variable
+      28                            .dwattr $C$DW$1, DW_AT_name("q")
+      29                            .dwattr $C$DW$1, DW_AT_TI_symbol_name("q")
+      30                            .dwattr $C$DW$1, DW_AT_location[DW_OP_addr q]
+      31                            .dwattr $C$DW$1, DW_AT_type(*$C$DW$T$76)
+      32                            .dwattr $C$DW$1, DW_AT_external
+      33                            .dwattr $C$DW$1, DW_AT_decl_file("../App/fract_madgwick.c")
+      34                            .dwattr $C$DW$1, DW_AT_decl_line(0x03)
+      35                            .dwattr $C$DW$1, DW_AT_decl_column(0x09)
+      36                    
+      37                    ;       /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armacpia -@/tmp/TI1F
+      38                    
+      39                    ;******************************************************************************
+      40                    ;* BUILD ATTRIBUTES                                                           *
+      41                    ;******************************************************************************
+      42                            .battr "aeabi", Tag_File, 1, Tag_ABI_PCS_wchar_t(2)
+      43                            .battr "aeabi", Tag_File, 1, Tag_ABI_FP_rounding(0)
+      44                            .battr "aeabi", Tag_File, 1, Tag_ABI_FP_denormal(0)
+      45                            .battr "aeabi", Tag_File, 1, Tag_ABI_FP_exceptions(0)
+      46                            .battr "aeabi", Tag_File, 1, Tag_ABI_FP_number_model(1)
+      47                            .battr "aeabi", Tag_File, 1, Tag_ABI_enum_size(0)
+      48                            .battr "aeabi", Tag_File, 1, Tag_ABI_optimization_goals(5)
+      49                            .battr "aeabi", Tag_File, 1, Tag_ABI_FP_optimization_goals(0)
+      50                            .battr "TI", Tag_File, 1, Tag_Bitfield_layout(2)
+      51                            .battr "aeabi", Tag_File, 1, Tag_ABI_VFP_args(3)
+      52                            .battr "TI", Tag_File, 1, Tag_FP_interface(1)
+      53                    
+      54                    ;******************************************************************************
+      55                    ;* TYPE INFORMATION                                                           *
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    2
+
+      56                    ;******************************************************************************
+      57                    
+      58                    $C$DW$T$21      .dwtag  DW_TAG_structure_type
+      59                            .dwattr $C$DW$T$21, DW_AT_byte_size(0x10)
+      60                    $C$DW$2 .dwtag  DW_TAG_member
+      61                            .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$14)
+      62                            .dwattr $C$DW$2, DW_AT_name("__max_align1")
+      63                            .dwattr $C$DW$2, DW_AT_TI_symbol_name("__max_align1")
+      64                            .dwattr $C$DW$2, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+      65                            .dwattr $C$DW$2, DW_AT_accessibility(DW_ACCESS_public)
+      66                            .dwattr $C$DW$2, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_2
+      67                            .dwattr $C$DW$2, DW_AT_decl_line(0x7b)
+      68                            .dwattr $C$DW$2, DW_AT_decl_column(0x0c)
+      69                    
+      70                    $C$DW$3 .dwtag  DW_TAG_member
+      71                            .dwattr $C$DW$3, DW_AT_type(*$C$DW$T$18)
+      72                            .dwattr $C$DW$3, DW_AT_name("__max_align2")
+      73                            .dwattr $C$DW$3, DW_AT_TI_symbol_name("__max_align2")
+      74                            .dwattr $C$DW$3, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+      75                            .dwattr $C$DW$3, DW_AT_accessibility(DW_ACCESS_public)
+      76                            .dwattr $C$DW$3, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_2
+      77                            .dwattr $C$DW$3, DW_AT_decl_line(0x7c)
+      78                            .dwattr $C$DW$3, DW_AT_decl_column(0x0e)
+      79                    
+      80                            .dwattr $C$DW$T$21, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+      81                            .dwattr $C$DW$T$21, DW_AT_decl_line(0x7a)
+      82                            .dwattr $C$DW$T$21, DW_AT_decl_column(0x10)
+      83                            .dwendtag $C$DW$T$21
+      84                    
+      85                    $C$DW$T$23      .dwtag  DW_TAG_typedef
+      86                            .dwattr $C$DW$T$23, DW_AT_name("__max_align_t")
+      87                            .dwattr $C$DW$T$23, DW_AT_type(*$C$DW$T$21)
+      88                            .dwattr $C$DW$T$23, DW_AT_language(DW_LANG_C)
+      89                            .dwattr $C$DW$T$23, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+      90                            .dwattr $C$DW$T$23, DW_AT_decl_line(0x7d)
+      91                            .dwattr $C$DW$T$23, DW_AT_decl_column(0x03)
+      92                    
+      93                    $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+      94                            .dwattr $C$DW$T$2, DW_AT_name("void")
+      95                    
+      96                    $C$DW$T$3       .dwtag  DW_TAG_pointer_type
+      97                            .dwattr $C$DW$T$3, DW_AT_type(*$C$DW$T$2)
+      98                            .dwattr $C$DW$T$3, DW_AT_address_class(0x20)
+      99                    
+     100                    $C$DW$T$4       .dwtag  DW_TAG_base_type
+     101                            .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+     102                            .dwattr $C$DW$T$4, DW_AT_name("bool")
+     103                            .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+     104                    
+     105                    $C$DW$T$5       .dwtag  DW_TAG_base_type
+     106                            .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+     107                            .dwattr $C$DW$T$5, DW_AT_name("signed char")
+     108                            .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+     109                    
+     110                    $C$DW$T$24      .dwtag  DW_TAG_typedef
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    3
+
+     111                            .dwattr $C$DW$T$24, DW_AT_name("__int8_t")
+     112                            .dwattr $C$DW$T$24, DW_AT_type(*$C$DW$T$5)
+     113                            .dwattr $C$DW$T$24, DW_AT_language(DW_LANG_C)
+     114                            .dwattr $C$DW$T$24, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     115                            .dwattr $C$DW$T$24, DW_AT_decl_line(0x4a)
+     116                            .dwattr $C$DW$T$24, DW_AT_decl_column(0x16)
+     117                    
+     118                    $C$DW$T$25      .dwtag  DW_TAG_typedef
+     119                            .dwattr $C$DW$T$25, DW_AT_name("__int_least8_t")
+     120                            .dwattr $C$DW$T$25, DW_AT_type(*$C$DW$T$24)
+     121                            .dwattr $C$DW$T$25, DW_AT_language(DW_LANG_C)
+     122                            .dwattr $C$DW$T$25, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     123                            .dwattr $C$DW$T$25, DW_AT_decl_line(0x69)
+     124                            .dwattr $C$DW$T$25, DW_AT_decl_column(0x12)
+     125                    
+     126                    $C$DW$T$26      .dwtag  DW_TAG_typedef
+     127                            .dwattr $C$DW$T$26, DW_AT_name("int_least8_t")
+     128                            .dwattr $C$DW$T$26, DW_AT_type(*$C$DW$T$25)
+     129                            .dwattr $C$DW$T$26, DW_AT_language(DW_LANG_C)
+     130                            .dwattr $C$DW$T$26, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     131                            .dwattr $C$DW$T$26, DW_AT_decl_line(0x2a)
+     132                            .dwattr $C$DW$T$26, DW_AT_decl_column(0x19)
+     133                    
+     134                    $C$DW$T$27      .dwtag  DW_TAG_typedef
+     135                            .dwattr $C$DW$T$27, DW_AT_name("int8_t")
+     136                            .dwattr $C$DW$T$27, DW_AT_type(*$C$DW$T$24)
+     137                            .dwattr $C$DW$T$27, DW_AT_language(DW_LANG_C)
+     138                            .dwattr $C$DW$T$27, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     139                            .dwattr $C$DW$T$27, DW_AT_decl_line(0x25)
+     140                            .dwattr $C$DW$T$27, DW_AT_decl_column(0x13)
+     141                    
+     142                    $C$DW$T$6       .dwtag  DW_TAG_base_type
+     143                            .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+     144                            .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+     145                            .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+     146                    
+     147                    $C$DW$T$28      .dwtag  DW_TAG_typedef
+     148                            .dwattr $C$DW$T$28, DW_AT_name("__uint8_t")
+     149                            .dwattr $C$DW$T$28, DW_AT_type(*$C$DW$T$6)
+     150                            .dwattr $C$DW$T$28, DW_AT_language(DW_LANG_C)
+     151                            .dwattr $C$DW$T$28, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     152                            .dwattr $C$DW$T$28, DW_AT_decl_line(0x4b)
+     153                            .dwattr $C$DW$T$28, DW_AT_decl_column(0x18)
+     154                    
+     155                    $C$DW$T$29      .dwtag  DW_TAG_typedef
+     156                            .dwattr $C$DW$T$29, DW_AT_name("__sa_family_t")
+     157                            .dwattr $C$DW$T$29, DW_AT_type(*$C$DW$T$28)
+     158                            .dwattr $C$DW$T$29, DW_AT_language(DW_LANG_C)
+     159                            .dwattr $C$DW$T$29, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     160                            .dwattr $C$DW$T$29, DW_AT_decl_line(0x47)
+     161                            .dwattr $C$DW$T$29, DW_AT_decl_column(0x13)
+     162                    
+     163                    $C$DW$T$30      .dwtag  DW_TAG_typedef
+     164                            .dwattr $C$DW$T$30, DW_AT_name("__uint_least8_t")
+     165                            .dwattr $C$DW$T$30, DW_AT_type(*$C$DW$T$28)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    4
+
+     166                            .dwattr $C$DW$T$30, DW_AT_language(DW_LANG_C)
+     167                            .dwattr $C$DW$T$30, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     168                            .dwattr $C$DW$T$30, DW_AT_decl_line(0x7f)
+     169                            .dwattr $C$DW$T$30, DW_AT_decl_column(0x13)
+     170                    
+     171                    $C$DW$T$31      .dwtag  DW_TAG_typedef
+     172                            .dwattr $C$DW$T$31, DW_AT_name("uint_least8_t")
+     173                            .dwattr $C$DW$T$31, DW_AT_type(*$C$DW$T$30)
+     174                            .dwattr $C$DW$T$31, DW_AT_language(DW_LANG_C)
+     175                            .dwattr $C$DW$T$31, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     176                            .dwattr $C$DW$T$31, DW_AT_decl_line(0x2f)
+     177                            .dwattr $C$DW$T$31, DW_AT_decl_column(0x1a)
+     178                    
+     179                    $C$DW$T$32      .dwtag  DW_TAG_typedef
+     180                            .dwattr $C$DW$T$32, DW_AT_name("uint8_t")
+     181                            .dwattr $C$DW$T$32, DW_AT_type(*$C$DW$T$28)
+     182                            .dwattr $C$DW$T$32, DW_AT_language(DW_LANG_C)
+     183                            .dwattr $C$DW$T$32, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     184                            .dwattr $C$DW$T$32, DW_AT_decl_line(0x3b)
+     185                            .dwattr $C$DW$T$32, DW_AT_decl_column(0x14)
+     186                    
+     187                    $C$DW$T$7       .dwtag  DW_TAG_base_type
+     188                            .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+     189                            .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+     190                            .dwattr $C$DW$T$7, DW_AT_byte_size(0x02)
+     191                    
+     192                    $C$DW$T$8       .dwtag  DW_TAG_base_type
+     193                            .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     194                            .dwattr $C$DW$T$8, DW_AT_name("short")
+     195                            .dwattr $C$DW$T$8, DW_AT_byte_size(0x02)
+     196                    
+     197                    $C$DW$T$33      .dwtag  DW_TAG_typedef
+     198                            .dwattr $C$DW$T$33, DW_AT_name("__int16_t")
+     199                            .dwattr $C$DW$T$33, DW_AT_type(*$C$DW$T$8)
+     200                            .dwattr $C$DW$T$33, DW_AT_language(DW_LANG_C)
+     201                            .dwattr $C$DW$T$33, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     202                            .dwattr $C$DW$T$33, DW_AT_decl_line(0x4c)
+     203                            .dwattr $C$DW$T$33, DW_AT_decl_column(0x11)
+     204                    
+     205                    $C$DW$T$34      .dwtag  DW_TAG_typedef
+     206                            .dwattr $C$DW$T$34, DW_AT_name("__int_least16_t")
+     207                            .dwattr $C$DW$T$34, DW_AT_type(*$C$DW$T$33)
+     208                            .dwattr $C$DW$T$34, DW_AT_language(DW_LANG_C)
+     209                            .dwattr $C$DW$T$34, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     210                            .dwattr $C$DW$T$34, DW_AT_decl_line(0x6a)
+     211                            .dwattr $C$DW$T$34, DW_AT_decl_column(0x13)
+     212                    
+     213                    $C$DW$T$35      .dwtag  DW_TAG_typedef
+     214                            .dwattr $C$DW$T$35, DW_AT_name("int_least16_t")
+     215                            .dwattr $C$DW$T$35, DW_AT_type(*$C$DW$T$34)
+     216                            .dwattr $C$DW$T$35, DW_AT_language(DW_LANG_C)
+     217                            .dwattr $C$DW$T$35, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     218                            .dwattr $C$DW$T$35, DW_AT_decl_line(0x2b)
+     219                            .dwattr $C$DW$T$35, DW_AT_decl_column(0x1a)
+     220                    
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    5
+
+     221                    $C$DW$T$36      .dwtag  DW_TAG_typedef
+     222                            .dwattr $C$DW$T$36, DW_AT_name("int16_t")
+     223                            .dwattr $C$DW$T$36, DW_AT_type(*$C$DW$T$33)
+     224                            .dwattr $C$DW$T$36, DW_AT_language(DW_LANG_C)
+     225                            .dwattr $C$DW$T$36, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     226                            .dwattr $C$DW$T$36, DW_AT_decl_line(0x2b)
+     227                            .dwattr $C$DW$T$36, DW_AT_decl_column(0x14)
+     228                    
+     229                    $C$DW$T$9       .dwtag  DW_TAG_base_type
+     230                            .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+     231                            .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+     232                            .dwattr $C$DW$T$9, DW_AT_byte_size(0x02)
+     233                    
+     234                    $C$DW$T$37      .dwtag  DW_TAG_typedef
+     235                            .dwattr $C$DW$T$37, DW_AT_name("___wchar_t")
+     236                            .dwattr $C$DW$T$37, DW_AT_type(*$C$DW$T$9)
+     237                            .dwattr $C$DW$T$37, DW_AT_language(DW_LANG_C)
+     238                            .dwattr $C$DW$T$37, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     239                            .dwattr $C$DW$T$37, DW_AT_decl_line(0x8b)
+     240                            .dwattr $C$DW$T$37, DW_AT_decl_column(0x1a)
+     241                    
+     242                    $C$DW$T$38      .dwtag  DW_TAG_typedef
+     243                            .dwattr $C$DW$T$38, DW_AT_name("__uint16_t")
+     244                            .dwattr $C$DW$T$38, DW_AT_type(*$C$DW$T$9)
+     245                            .dwattr $C$DW$T$38, DW_AT_language(DW_LANG_C)
+     246                            .dwattr $C$DW$T$38, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     247                            .dwattr $C$DW$T$38, DW_AT_decl_line(0x4d)
+     248                            .dwattr $C$DW$T$38, DW_AT_decl_column(0x19)
+     249                    
+     250                    $C$DW$T$39      .dwtag  DW_TAG_typedef
+     251                            .dwattr $C$DW$T$39, DW_AT_name("__mode_t")
+     252                            .dwattr $C$DW$T$39, DW_AT_type(*$C$DW$T$38)
+     253                            .dwattr $C$DW$T$39, DW_AT_language(DW_LANG_C)
+     254                            .dwattr $C$DW$T$39, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     255                            .dwattr $C$DW$T$39, DW_AT_decl_line(0x3a)
+     256                            .dwattr $C$DW$T$39, DW_AT_decl_column(0x14)
+     257                    
+     258                    $C$DW$T$40      .dwtag  DW_TAG_typedef
+     259                            .dwattr $C$DW$T$40, DW_AT_name("__uint_least16_t")
+     260                            .dwattr $C$DW$T$40, DW_AT_type(*$C$DW$T$38)
+     261                            .dwattr $C$DW$T$40, DW_AT_language(DW_LANG_C)
+     262                            .dwattr $C$DW$T$40, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     263                            .dwattr $C$DW$T$40, DW_AT_decl_line(0x80)
+     264                            .dwattr $C$DW$T$40, DW_AT_decl_column(0x14)
+     265                    
+     266                    $C$DW$T$41      .dwtag  DW_TAG_typedef
+     267                            .dwattr $C$DW$T$41, DW_AT_name("__char16_t")
+     268                            .dwattr $C$DW$T$41, DW_AT_type(*$C$DW$T$40)
+     269                            .dwattr $C$DW$T$41, DW_AT_language(DW_LANG_C)
+     270                            .dwattr $C$DW$T$41, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     271                            .dwattr $C$DW$T$41, DW_AT_decl_line(0x71)
+     272                            .dwattr $C$DW$T$41, DW_AT_decl_column(0x1a)
+     273                    
+     274                    $C$DW$T$42      .dwtag  DW_TAG_typedef
+     275                            .dwattr $C$DW$T$42, DW_AT_name("uint_least16_t")
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    6
+
+     276                            .dwattr $C$DW$T$42, DW_AT_type(*$C$DW$T$40)
+     277                            .dwattr $C$DW$T$42, DW_AT_language(DW_LANG_C)
+     278                            .dwattr $C$DW$T$42, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     279                            .dwattr $C$DW$T$42, DW_AT_decl_line(0x30)
+     280                            .dwattr $C$DW$T$42, DW_AT_decl_column(0x1a)
+     281                    
+     282                    $C$DW$T$43      .dwtag  DW_TAG_typedef
+     283                            .dwattr $C$DW$T$43, DW_AT_name("uint16_t")
+     284                            .dwattr $C$DW$T$43, DW_AT_type(*$C$DW$T$38)
+     285                            .dwattr $C$DW$T$43, DW_AT_language(DW_LANG_C)
+     286                            .dwattr $C$DW$T$43, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     287                            .dwattr $C$DW$T$43, DW_AT_decl_line(0x41)
+     288                            .dwattr $C$DW$T$43, DW_AT_decl_column(0x15)
+     289                    
+     290                    $C$DW$T$10      .dwtag  DW_TAG_base_type
+     291                            .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     292                            .dwattr $C$DW$T$10, DW_AT_name("int")
+     293                            .dwattr $C$DW$T$10, DW_AT_byte_size(0x04)
+     294                    
+     295                    $C$DW$T$44      .dwtag  DW_TAG_typedef
+     296                            .dwattr $C$DW$T$44, DW_AT_name("_Mbstatet")
+     297                            .dwattr $C$DW$T$44, DW_AT_type(*$C$DW$T$10)
+     298                            .dwattr $C$DW$T$44, DW_AT_language(DW_LANG_C)
+     299                            .dwattr $C$DW$T$44, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     300                            .dwattr $C$DW$T$44, DW_AT_decl_line(0x8f)
+     301                            .dwattr $C$DW$T$44, DW_AT_decl_column(0x0d)
+     302                    
+     303                    $C$DW$T$45      .dwtag  DW_TAG_typedef
+     304                            .dwattr $C$DW$T$45, DW_AT_name("__mbstate_t")
+     305                            .dwattr $C$DW$T$45, DW_AT_type(*$C$DW$T$44)
+     306                            .dwattr $C$DW$T$45, DW_AT_language(DW_LANG_C)
+     307                            .dwattr $C$DW$T$45, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     308                            .dwattr $C$DW$T$45, DW_AT_decl_line(0x92)
+     309                            .dwattr $C$DW$T$45, DW_AT_decl_column(0x13)
+     310                    
+     311                    $C$DW$T$46      .dwtag  DW_TAG_typedef
+     312                            .dwattr $C$DW$T$46, DW_AT_name("__accmode_t")
+     313                            .dwattr $C$DW$T$46, DW_AT_type(*$C$DW$T$10)
+     314                            .dwattr $C$DW$T$46, DW_AT_language(DW_LANG_C)
+     315                            .dwattr $C$DW$T$46, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     316                            .dwattr $C$DW$T$46, DW_AT_decl_line(0x3b)
+     317                            .dwattr $C$DW$T$46, DW_AT_decl_column(0x0e)
+     318                    
+     319                    $C$DW$T$47      .dwtag  DW_TAG_typedef
+     320                            .dwattr $C$DW$T$47, DW_AT_name("__cpulevel_t")
+     321                            .dwattr $C$DW$T$47, DW_AT_type(*$C$DW$T$10)
+     322                            .dwattr $C$DW$T$47, DW_AT_language(DW_LANG_C)
+     323                            .dwattr $C$DW$T$47, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     324                            .dwattr $C$DW$T$47, DW_AT_decl_line(0x50)
+     325                            .dwattr $C$DW$T$47, DW_AT_decl_column(0x0e)
+     326                    
+     327                    $C$DW$T$48      .dwtag  DW_TAG_typedef
+     328                            .dwattr $C$DW$T$48, DW_AT_name("__cpusetid_t")
+     329                            .dwattr $C$DW$T$48, DW_AT_type(*$C$DW$T$10)
+     330                            .dwattr $C$DW$T$48, DW_AT_language(DW_LANG_C)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    7
+
+     331                            .dwattr $C$DW$T$48, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     332                            .dwattr $C$DW$T$48, DW_AT_decl_line(0x51)
+     333                            .dwattr $C$DW$T$48, DW_AT_decl_column(0x0e)
+     334                    
+     335                    $C$DW$T$49      .dwtag  DW_TAG_typedef
+     336                            .dwattr $C$DW$T$49, DW_AT_name("__cpuwhich_t")
+     337                            .dwattr $C$DW$T$49, DW_AT_type(*$C$DW$T$10)
+     338                            .dwattr $C$DW$T$49, DW_AT_language(DW_LANG_C)
+     339                            .dwattr $C$DW$T$49, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     340                            .dwattr $C$DW$T$49, DW_AT_decl_line(0x4f)
+     341                            .dwattr $C$DW$T$49, DW_AT_decl_column(0x0e)
+     342                    
+     343                    $C$DW$T$50      .dwtag  DW_TAG_typedef
+     344                            .dwattr $C$DW$T$50, DW_AT_name("__ct_rune_t")
+     345                            .dwattr $C$DW$T$50, DW_AT_type(*$C$DW$T$10)
+     346                            .dwattr $C$DW$T$50, DW_AT_language(DW_LANG_C)
+     347                            .dwattr $C$DW$T$50, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     348                            .dwattr $C$DW$T$50, DW_AT_decl_line(0x69)
+     349                            .dwattr $C$DW$T$50, DW_AT_decl_column(0x0e)
+     350                    
+     351                    $C$DW$T$51      .dwtag  DW_TAG_typedef
+     352                            .dwattr $C$DW$T$51, DW_AT_name("__rune_t")
+     353                            .dwattr $C$DW$T$51, DW_AT_type(*$C$DW$T$50)
+     354                            .dwattr $C$DW$T$51, DW_AT_language(DW_LANG_C)
+     355                            .dwattr $C$DW$T$51, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     356                            .dwattr $C$DW$T$51, DW_AT_decl_line(0x6c)
+     357                            .dwattr $C$DW$T$51, DW_AT_decl_column(0x15)
+     358                    
+     359                    $C$DW$T$52      .dwtag  DW_TAG_typedef
+     360                            .dwattr $C$DW$T$52, DW_AT_name("__wint_t")
+     361                            .dwattr $C$DW$T$52, DW_AT_type(*$C$DW$T$50)
+     362                            .dwattr $C$DW$T$52, DW_AT_language(DW_LANG_C)
+     363                            .dwattr $C$DW$T$52, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     364                            .dwattr $C$DW$T$52, DW_AT_decl_line(0x6d)
+     365                            .dwattr $C$DW$T$52, DW_AT_decl_column(0x15)
+     366                    
+     367                    $C$DW$T$53      .dwtag  DW_TAG_typedef
+     368                            .dwattr $C$DW$T$53, DW_AT_name("__int32_t")
+     369                            .dwattr $C$DW$T$53, DW_AT_type(*$C$DW$T$10)
+     370                            .dwattr $C$DW$T$53, DW_AT_language(DW_LANG_C)
+     371                            .dwattr $C$DW$T$53, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     372                            .dwattr $C$DW$T$53, DW_AT_decl_line(0x4e)
+     373                            .dwattr $C$DW$T$53, DW_AT_decl_column(0x0f)
+     374                    
+     375                    $C$DW$T$54      .dwtag  DW_TAG_typedef
+     376                            .dwattr $C$DW$T$54, DW_AT_name("__blksize_t")
+     377                            .dwattr $C$DW$T$54, DW_AT_type(*$C$DW$T$53)
+     378                            .dwattr $C$DW$T$54, DW_AT_language(DW_LANG_C)
+     379                            .dwattr $C$DW$T$54, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     380                            .dwattr $C$DW$T$54, DW_AT_decl_line(0x2f)
+     381                            .dwattr $C$DW$T$54, DW_AT_decl_column(0x13)
+     382                    
+     383                    $C$DW$T$55      .dwtag  DW_TAG_typedef
+     384                            .dwattr $C$DW$T$55, DW_AT_name("__clockid_t")
+     385                            .dwattr $C$DW$T$55, DW_AT_type(*$C$DW$T$53)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    8
+
+     386                            .dwattr $C$DW$T$55, DW_AT_language(DW_LANG_C)
+     387                            .dwattr $C$DW$T$55, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     388                            .dwattr $C$DW$T$55, DW_AT_decl_line(0x31)
+     389                            .dwattr $C$DW$T$55, DW_AT_decl_column(0x13)
+     390                    
+     391                    $C$DW$T$56      .dwtag  DW_TAG_typedef
+     392                            .dwattr $C$DW$T$56, DW_AT_name("__critical_t")
+     393                            .dwattr $C$DW$T$56, DW_AT_type(*$C$DW$T$53)
+     394                            .dwattr $C$DW$T$56, DW_AT_language(DW_LANG_C)
+     395                            .dwattr $C$DW$T$56, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     396                            .dwattr $C$DW$T$56, DW_AT_decl_line(0x5f)
+     397                            .dwattr $C$DW$T$56, DW_AT_decl_column(0x13)
+     398                    
+     399                    $C$DW$T$57      .dwtag  DW_TAG_typedef
+     400                            .dwattr $C$DW$T$57, DW_AT_name("__int_fast16_t")
+     401                            .dwattr $C$DW$T$57, DW_AT_type(*$C$DW$T$53)
+     402                            .dwattr $C$DW$T$57, DW_AT_language(DW_LANG_C)
+     403                            .dwattr $C$DW$T$57, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     404                            .dwattr $C$DW$T$57, DW_AT_decl_line(0x66)
+     405                            .dwattr $C$DW$T$57, DW_AT_decl_column(0x13)
+     406                    
+     407                    $C$DW$T$58      .dwtag  DW_TAG_typedef
+     408                            .dwattr $C$DW$T$58, DW_AT_name("int_fast16_t")
+     409                            .dwattr $C$DW$T$58, DW_AT_type(*$C$DW$T$57)
+     410                            .dwattr $C$DW$T$58, DW_AT_language(DW_LANG_C)
+     411                            .dwattr $C$DW$T$58, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     412                            .dwattr $C$DW$T$58, DW_AT_decl_line(0x35)
+     413                            .dwattr $C$DW$T$58, DW_AT_decl_column(0x19)
+     414                    
+     415                    $C$DW$T$59      .dwtag  DW_TAG_typedef
+     416                            .dwattr $C$DW$T$59, DW_AT_name("__int_fast32_t")
+     417                            .dwattr $C$DW$T$59, DW_AT_type(*$C$DW$T$53)
+     418                            .dwattr $C$DW$T$59, DW_AT_language(DW_LANG_C)
+     419                            .dwattr $C$DW$T$59, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     420                            .dwattr $C$DW$T$59, DW_AT_decl_line(0x67)
+     421                            .dwattr $C$DW$T$59, DW_AT_decl_column(0x13)
+     422                    
+     423                    $C$DW$T$60      .dwtag  DW_TAG_typedef
+     424                            .dwattr $C$DW$T$60, DW_AT_name("int_fast32_t")
+     425                            .dwattr $C$DW$T$60, DW_AT_type(*$C$DW$T$59)
+     426                            .dwattr $C$DW$T$60, DW_AT_language(DW_LANG_C)
+     427                            .dwattr $C$DW$T$60, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     428                            .dwattr $C$DW$T$60, DW_AT_decl_line(0x36)
+     429                            .dwattr $C$DW$T$60, DW_AT_decl_column(0x19)
+     430                    
+     431                    $C$DW$T$61      .dwtag  DW_TAG_typedef
+     432                            .dwattr $C$DW$T$61, DW_AT_name("__int_fast8_t")
+     433                            .dwattr $C$DW$T$61, DW_AT_type(*$C$DW$T$53)
+     434                            .dwattr $C$DW$T$61, DW_AT_language(DW_LANG_C)
+     435                            .dwattr $C$DW$T$61, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     436                            .dwattr $C$DW$T$61, DW_AT_decl_line(0x65)
+     437                            .dwattr $C$DW$T$61, DW_AT_decl_column(0x13)
+     438                    
+     439                    $C$DW$T$62      .dwtag  DW_TAG_typedef
+     440                            .dwattr $C$DW$T$62, DW_AT_name("int_fast8_t")
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE    9
+
+     441                            .dwattr $C$DW$T$62, DW_AT_type(*$C$DW$T$61)
+     442                            .dwattr $C$DW$T$62, DW_AT_language(DW_LANG_C)
+     443                            .dwattr $C$DW$T$62, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     444                            .dwattr $C$DW$T$62, DW_AT_decl_line(0x34)
+     445                            .dwattr $C$DW$T$62, DW_AT_decl_column(0x18)
+     446                    
+     447                    $C$DW$T$63      .dwtag  DW_TAG_typedef
+     448                            .dwattr $C$DW$T$63, DW_AT_name("__int_least32_t")
+     449                            .dwattr $C$DW$T$63, DW_AT_type(*$C$DW$T$53)
+     450                            .dwattr $C$DW$T$63, DW_AT_language(DW_LANG_C)
+     451                            .dwattr $C$DW$T$63, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     452                            .dwattr $C$DW$T$63, DW_AT_decl_line(0x6b)
+     453                            .dwattr $C$DW$T$63, DW_AT_decl_column(0x13)
+     454                    
+     455                    $C$DW$T$64      .dwtag  DW_TAG_typedef
+     456                            .dwattr $C$DW$T$64, DW_AT_name("int_least32_t")
+     457                            .dwattr $C$DW$T$64, DW_AT_type(*$C$DW$T$63)
+     458                            .dwattr $C$DW$T$64, DW_AT_language(DW_LANG_C)
+     459                            .dwattr $C$DW$T$64, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     460                            .dwattr $C$DW$T$64, DW_AT_decl_line(0x2c)
+     461                            .dwattr $C$DW$T$64, DW_AT_decl_column(0x1a)
+     462                    
+     463                    $C$DW$T$65      .dwtag  DW_TAG_typedef
+     464                            .dwattr $C$DW$T$65, DW_AT_name("__intfptr_t")
+     465                            .dwattr $C$DW$T$65, DW_AT_type(*$C$DW$T$53)
+     466                            .dwattr $C$DW$T$65, DW_AT_language(DW_LANG_C)
+     467                            .dwattr $C$DW$T$65, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     468                            .dwattr $C$DW$T$65, DW_AT_decl_line(0x62)
+     469                            .dwattr $C$DW$T$65, DW_AT_decl_column(0x13)
+     470                    
+     471                    $C$DW$T$66      .dwtag  DW_TAG_typedef
+     472                            .dwattr $C$DW$T$66, DW_AT_name("__intptr_t")
+     473                            .dwattr $C$DW$T$66, DW_AT_type(*$C$DW$T$53)
+     474                            .dwattr $C$DW$T$66, DW_AT_language(DW_LANG_C)
+     475                            .dwattr $C$DW$T$66, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     476                            .dwattr $C$DW$T$66, DW_AT_decl_line(0x64)
+     477                            .dwattr $C$DW$T$66, DW_AT_decl_column(0x13)
+     478                    
+     479                    $C$DW$T$67      .dwtag  DW_TAG_typedef
+     480                            .dwattr $C$DW$T$67, DW_AT_name("intptr_t")
+     481                            .dwattr $C$DW$T$67, DW_AT_type(*$C$DW$T$66)
+     482                            .dwattr $C$DW$T$67, DW_AT_language(DW_LANG_C)
+     483                            .dwattr $C$DW$T$67, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     484                            .dwattr $C$DW$T$67, DW_AT_decl_line(0x50)
+     485                            .dwattr $C$DW$T$67, DW_AT_decl_column(0x15)
+     486                    
+     487                    $C$DW$T$68      .dwtag  DW_TAG_typedef
+     488                            .dwattr $C$DW$T$68, DW_AT_name("__lwpid_t")
+     489                            .dwattr $C$DW$T$68, DW_AT_type(*$C$DW$T$53)
+     490                            .dwattr $C$DW$T$68, DW_AT_language(DW_LANG_C)
+     491                            .dwattr $C$DW$T$68, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     492                            .dwattr $C$DW$T$68, DW_AT_decl_line(0x39)
+     493                            .dwattr $C$DW$T$68, DW_AT_decl_column(0x13)
+     494                    
+     495                    $C$DW$T$69      .dwtag  DW_TAG_typedef
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   10
+
+     496                            .dwattr $C$DW$T$69, DW_AT_name("__pid_t")
+     497                            .dwattr $C$DW$T$69, DW_AT_type(*$C$DW$T$53)
+     498                            .dwattr $C$DW$T$69, DW_AT_language(DW_LANG_C)
+     499                            .dwattr $C$DW$T$69, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     500                            .dwattr $C$DW$T$69, DW_AT_decl_line(0x40)
+     501                            .dwattr $C$DW$T$69, DW_AT_decl_column(0x13)
+     502                    
+     503                    $C$DW$T$70      .dwtag  DW_TAG_typedef
+     504                            .dwattr $C$DW$T$70, DW_AT_name("__ptrdiff_t")
+     505                            .dwattr $C$DW$T$70, DW_AT_type(*$C$DW$T$53)
+     506                            .dwattr $C$DW$T$70, DW_AT_language(DW_LANG_C)
+     507                            .dwattr $C$DW$T$70, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     508                            .dwattr $C$DW$T$70, DW_AT_decl_line(0x6d)
+     509                            .dwattr $C$DW$T$70, DW_AT_decl_column(0x13)
+     510                    
+     511                    $C$DW$T$71      .dwtag  DW_TAG_typedef
+     512                            .dwattr $C$DW$T$71, DW_AT_name("__register_t")
+     513                            .dwattr $C$DW$T$71, DW_AT_type(*$C$DW$T$53)
+     514                            .dwattr $C$DW$T$71, DW_AT_language(DW_LANG_C)
+     515                            .dwattr $C$DW$T$71, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     516                            .dwattr $C$DW$T$71, DW_AT_decl_line(0x6e)
+     517                            .dwattr $C$DW$T$71, DW_AT_decl_column(0x13)
+     518                    
+     519                    $C$DW$T$72      .dwtag  DW_TAG_typedef
+     520                            .dwattr $C$DW$T$72, DW_AT_name("__segsz_t")
+     521                            .dwattr $C$DW$T$72, DW_AT_type(*$C$DW$T$53)
+     522                            .dwattr $C$DW$T$72, DW_AT_language(DW_LANG_C)
+     523                            .dwattr $C$DW$T$72, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     524                            .dwattr $C$DW$T$72, DW_AT_decl_line(0x6f)
+     525                            .dwattr $C$DW$T$72, DW_AT_decl_column(0x13)
+     526                    
+     527                    $C$DW$T$73      .dwtag  DW_TAG_typedef
+     528                            .dwattr $C$DW$T$73, DW_AT_name("__ssize_t")
+     529                            .dwattr $C$DW$T$73, DW_AT_type(*$C$DW$T$53)
+     530                            .dwattr $C$DW$T$73, DW_AT_language(DW_LANG_C)
+     531                            .dwattr $C$DW$T$73, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     532                            .dwattr $C$DW$T$73, DW_AT_decl_line(0x71)
+     533                            .dwattr $C$DW$T$73, DW_AT_decl_column(0x13)
+     534                    
+     535                    $C$DW$T$74      .dwtag  DW_TAG_typedef
+     536                            .dwattr $C$DW$T$74, DW_AT_name("int32_t")
+     537                            .dwattr $C$DW$T$74, DW_AT_type(*$C$DW$T$53)
+     538                            .dwattr $C$DW$T$74, DW_AT_language(DW_LANG_C)
+     539                            .dwattr $C$DW$T$74, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     540                            .dwattr $C$DW$T$74, DW_AT_decl_line(0x30)
+     541                            .dwattr $C$DW$T$74, DW_AT_decl_column(0x14)
+     542                    
+     543                    $C$DW$T$75      .dwtag  DW_TAG_typedef
+     544                            .dwattr $C$DW$T$75, DW_AT_name("fix16_t")
+     545                            .dwattr $C$DW$T$75, DW_AT_type(*$C$DW$T$74)
+     546                            .dwattr $C$DW$T$75, DW_AT_language(DW_LANG_C)
+     547                            .dwattr $C$DW$T$75, DW_AT_decl_file("/home/merdak/Apps/ti/libfixmath/fix16.h")
+     548                            .dwattr $C$DW$T$75, DW_AT_decl_line(0x1a)
+     549                            .dwattr $C$DW$T$75, DW_AT_decl_column(0x11)
+     550                    
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   11
+
+     551                    
+     552                    $C$DW$T$76      .dwtag  DW_TAG_array_type
+     553                            .dwattr $C$DW$T$76, DW_AT_type(*$C$DW$T$75)
+     554                            .dwattr $C$DW$T$76, DW_AT_language(DW_LANG_C)
+     555                            .dwattr $C$DW$T$76, DW_AT_byte_size(0x10)
+     556                    $C$DW$4 .dwtag  DW_TAG_subrange_type
+     557                            .dwattr $C$DW$4, DW_AT_upper_bound(0x03)
+     558                    
+     559                            .dwendtag $C$DW$T$76
+     560                    
+     561                    $C$DW$T$77      .dwtag  DW_TAG_typedef
+     562                            .dwattr $C$DW$T$77, DW_AT_name("__nl_item")
+     563                            .dwattr $C$DW$T$77, DW_AT_type(*$C$DW$T$10)
+     564                            .dwattr $C$DW$T$77, DW_AT_language(DW_LANG_C)
+     565                            .dwattr $C$DW$T$77, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     566                            .dwattr $C$DW$T$77, DW_AT_decl_line(0x3c)
+     567                            .dwattr $C$DW$T$77, DW_AT_decl_column(0x0e)
+     568                    
+     569                    $C$DW$T$11      .dwtag  DW_TAG_base_type
+     570                            .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+     571                            .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+     572                            .dwattr $C$DW$T$11, DW_AT_byte_size(0x04)
+     573                    
+     574                    $C$DW$T$78      .dwtag  DW_TAG_typedef
+     575                            .dwattr $C$DW$T$78, DW_AT_name("__uint32_t")
+     576                            .dwattr $C$DW$T$78, DW_AT_type(*$C$DW$T$11)
+     577                            .dwattr $C$DW$T$78, DW_AT_language(DW_LANG_C)
+     578                            .dwattr $C$DW$T$78, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     579                            .dwattr $C$DW$T$78, DW_AT_decl_line(0x4f)
+     580                            .dwattr $C$DW$T$78, DW_AT_decl_column(0x17)
+     581                    
+     582                    $C$DW$T$79      .dwtag  DW_TAG_typedef
+     583                            .dwattr $C$DW$T$79, DW_AT_name("__clock_t")
+     584                            .dwattr $C$DW$T$79, DW_AT_type(*$C$DW$T$78)
+     585                            .dwattr $C$DW$T$79, DW_AT_language(DW_LANG_C)
+     586                            .dwattr $C$DW$T$79, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     587                            .dwattr $C$DW$T$79, DW_AT_decl_line(0x5e)
+     588                            .dwattr $C$DW$T$79, DW_AT_decl_column(0x14)
+     589                    
+     590                    $C$DW$T$80      .dwtag  DW_TAG_typedef
+     591                            .dwattr $C$DW$T$80, DW_AT_name("__fflags_t")
+     592                            .dwattr $C$DW$T$80, DW_AT_type(*$C$DW$T$78)
+     593                            .dwattr $C$DW$T$80, DW_AT_language(DW_LANG_C)
+     594                            .dwattr $C$DW$T$80, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     595                            .dwattr $C$DW$T$80, DW_AT_decl_line(0x32)
+     596                            .dwattr $C$DW$T$80, DW_AT_decl_column(0x14)
+     597                    
+     598                    $C$DW$T$81      .dwtag  DW_TAG_typedef
+     599                            .dwattr $C$DW$T$81, DW_AT_name("__fixpt_t")
+     600                            .dwattr $C$DW$T$81, DW_AT_type(*$C$DW$T$78)
+     601                            .dwattr $C$DW$T$81, DW_AT_language(DW_LANG_C)
+     602                            .dwattr $C$DW$T$81, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     603                            .dwattr $C$DW$T$81, DW_AT_decl_line(0x81)
+     604                            .dwattr $C$DW$T$81, DW_AT_decl_column(0x14)
+     605                    
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   12
+
+     606                    $C$DW$T$82      .dwtag  DW_TAG_typedef
+     607                            .dwattr $C$DW$T$82, DW_AT_name("__gid_t")
+     608                            .dwattr $C$DW$T$82, DW_AT_type(*$C$DW$T$78)
+     609                            .dwattr $C$DW$T$82, DW_AT_language(DW_LANG_C)
+     610                            .dwattr $C$DW$T$82, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     611                            .dwattr $C$DW$T$82, DW_AT_decl_line(0x35)
+     612                            .dwattr $C$DW$T$82, DW_AT_decl_column(0x14)
+     613                    
+     614                    $C$DW$T$83      .dwtag  DW_TAG_typedef
+     615                            .dwattr $C$DW$T$83, DW_AT_name("__size_t")
+     616                            .dwattr $C$DW$T$83, DW_AT_type(*$C$DW$T$78)
+     617                            .dwattr $C$DW$T$83, DW_AT_language(DW_LANG_C)
+     618                            .dwattr $C$DW$T$83, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     619                            .dwattr $C$DW$T$83, DW_AT_decl_line(0x70)
+     620                            .dwattr $C$DW$T$83, DW_AT_decl_column(0x14)
+     621                    
+     622                    $C$DW$T$84      .dwtag  DW_TAG_typedef
+     623                            .dwattr $C$DW$T$84, DW_AT_name("__socklen_t")
+     624                            .dwattr $C$DW$T$84, DW_AT_type(*$C$DW$T$78)
+     625                            .dwattr $C$DW$T$84, DW_AT_language(DW_LANG_C)
+     626                            .dwattr $C$DW$T$84, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     627                            .dwattr $C$DW$T$84, DW_AT_decl_line(0x49)
+     628                            .dwattr $C$DW$T$84, DW_AT_decl_column(0x14)
+     629                    
+     630                    $C$DW$T$85      .dwtag  DW_TAG_typedef
+     631                            .dwattr $C$DW$T$85, DW_AT_name("__time_t")
+     632                            .dwattr $C$DW$T$85, DW_AT_type(*$C$DW$T$78)
+     633                            .dwattr $C$DW$T$85, DW_AT_language(DW_LANG_C)
+     634                            .dwattr $C$DW$T$85, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     635                            .dwattr $C$DW$T$85, DW_AT_decl_line(0x76)
+     636                            .dwattr $C$DW$T$85, DW_AT_decl_column(0x19)
+     637                    
+     638                    $C$DW$T$86      .dwtag  DW_TAG_typedef
+     639                            .dwattr $C$DW$T$86, DW_AT_name("__u_register_t")
+     640                            .dwattr $C$DW$T$86, DW_AT_type(*$C$DW$T$78)
+     641                            .dwattr $C$DW$T$86, DW_AT_language(DW_LANG_C)
+     642                            .dwattr $C$DW$T$86, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     643                            .dwattr $C$DW$T$86, DW_AT_decl_line(0x83)
+     644                            .dwattr $C$DW$T$86, DW_AT_decl_column(0x14)
+     645                    
+     646                    $C$DW$T$87      .dwtag  DW_TAG_typedef
+     647                            .dwattr $C$DW$T$87, DW_AT_name("__uid_t")
+     648                            .dwattr $C$DW$T$87, DW_AT_type(*$C$DW$T$78)
+     649                            .dwattr $C$DW$T$87, DW_AT_language(DW_LANG_C)
+     650                            .dwattr $C$DW$T$87, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     651                            .dwattr $C$DW$T$87, DW_AT_decl_line(0x4d)
+     652                            .dwattr $C$DW$T$87, DW_AT_decl_column(0x14)
+     653                    
+     654                    $C$DW$T$88      .dwtag  DW_TAG_typedef
+     655                            .dwattr $C$DW$T$88, DW_AT_name("__uint_fast16_t")
+     656                            .dwattr $C$DW$T$88, DW_AT_type(*$C$DW$T$78)
+     657                            .dwattr $C$DW$T$88, DW_AT_language(DW_LANG_C)
+     658                            .dwattr $C$DW$T$88, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     659                            .dwattr $C$DW$T$88, DW_AT_decl_line(0x7c)
+     660                            .dwattr $C$DW$T$88, DW_AT_decl_column(0x14)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   13
+
+     661                    
+     662                    $C$DW$T$89      .dwtag  DW_TAG_typedef
+     663                            .dwattr $C$DW$T$89, DW_AT_name("uint_fast16_t")
+     664                            .dwattr $C$DW$T$89, DW_AT_type(*$C$DW$T$88)
+     665                            .dwattr $C$DW$T$89, DW_AT_language(DW_LANG_C)
+     666                            .dwattr $C$DW$T$89, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     667                            .dwattr $C$DW$T$89, DW_AT_decl_line(0x3a)
+     668                            .dwattr $C$DW$T$89, DW_AT_decl_column(0x1a)
+     669                    
+     670                    $C$DW$T$90      .dwtag  DW_TAG_typedef
+     671                            .dwattr $C$DW$T$90, DW_AT_name("__uint_fast32_t")
+     672                            .dwattr $C$DW$T$90, DW_AT_type(*$C$DW$T$78)
+     673                            .dwattr $C$DW$T$90, DW_AT_language(DW_LANG_C)
+     674                            .dwattr $C$DW$T$90, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     675                            .dwattr $C$DW$T$90, DW_AT_decl_line(0x7d)
+     676                            .dwattr $C$DW$T$90, DW_AT_decl_column(0x14)
+     677                    
+     678                    $C$DW$T$91      .dwtag  DW_TAG_typedef
+     679                            .dwattr $C$DW$T$91, DW_AT_name("uint_fast32_t")
+     680                            .dwattr $C$DW$T$91, DW_AT_type(*$C$DW$T$90)
+     681                            .dwattr $C$DW$T$91, DW_AT_language(DW_LANG_C)
+     682                            .dwattr $C$DW$T$91, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     683                            .dwattr $C$DW$T$91, DW_AT_decl_line(0x3b)
+     684                            .dwattr $C$DW$T$91, DW_AT_decl_column(0x1a)
+     685                    
+     686                    $C$DW$T$92      .dwtag  DW_TAG_typedef
+     687                            .dwattr $C$DW$T$92, DW_AT_name("__uint_fast8_t")
+     688                            .dwattr $C$DW$T$92, DW_AT_type(*$C$DW$T$78)
+     689                            .dwattr $C$DW$T$92, DW_AT_language(DW_LANG_C)
+     690                            .dwattr $C$DW$T$92, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     691                            .dwattr $C$DW$T$92, DW_AT_decl_line(0x7b)
+     692                            .dwattr $C$DW$T$92, DW_AT_decl_column(0x14)
+     693                    
+     694                    $C$DW$T$93      .dwtag  DW_TAG_typedef
+     695                            .dwattr $C$DW$T$93, DW_AT_name("uint_fast8_t")
+     696                            .dwattr $C$DW$T$93, DW_AT_type(*$C$DW$T$92)
+     697                            .dwattr $C$DW$T$93, DW_AT_language(DW_LANG_C)
+     698                            .dwattr $C$DW$T$93, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     699                            .dwattr $C$DW$T$93, DW_AT_decl_line(0x39)
+     700                            .dwattr $C$DW$T$93, DW_AT_decl_column(0x19)
+     701                    
+     702                    $C$DW$T$94      .dwtag  DW_TAG_typedef
+     703                            .dwattr $C$DW$T$94, DW_AT_name("__uint_least32_t")
+     704                            .dwattr $C$DW$T$94, DW_AT_type(*$C$DW$T$78)
+     705                            .dwattr $C$DW$T$94, DW_AT_language(DW_LANG_C)
+     706                            .dwattr $C$DW$T$94, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     707                            .dwattr $C$DW$T$94, DW_AT_decl_line(0x81)
+     708                            .dwattr $C$DW$T$94, DW_AT_decl_column(0x14)
+     709                    
+     710                    $C$DW$T$95      .dwtag  DW_TAG_typedef
+     711                            .dwattr $C$DW$T$95, DW_AT_name("__char32_t")
+     712                            .dwattr $C$DW$T$95, DW_AT_type(*$C$DW$T$94)
+     713                            .dwattr $C$DW$T$95, DW_AT_language(DW_LANG_C)
+     714                            .dwattr $C$DW$T$95, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     715                            .dwattr $C$DW$T$95, DW_AT_decl_line(0x72)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   14
+
+     716                            .dwattr $C$DW$T$95, DW_AT_decl_column(0x1a)
+     717                    
+     718                    $C$DW$T$96      .dwtag  DW_TAG_typedef
+     719                            .dwattr $C$DW$T$96, DW_AT_name("uint_least32_t")
+     720                            .dwattr $C$DW$T$96, DW_AT_type(*$C$DW$T$94)
+     721                            .dwattr $C$DW$T$96, DW_AT_language(DW_LANG_C)
+     722                            .dwattr $C$DW$T$96, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     723                            .dwattr $C$DW$T$96, DW_AT_decl_line(0x31)
+     724                            .dwattr $C$DW$T$96, DW_AT_decl_column(0x1a)
+     725                    
+     726                    $C$DW$T$97      .dwtag  DW_TAG_typedef
+     727                            .dwattr $C$DW$T$97, DW_AT_name("__uintfptr_t")
+     728                            .dwattr $C$DW$T$97, DW_AT_type(*$C$DW$T$78)
+     729                            .dwattr $C$DW$T$97, DW_AT_language(DW_LANG_C)
+     730                            .dwattr $C$DW$T$97, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     731                            .dwattr $C$DW$T$97, DW_AT_decl_line(0x78)
+     732                            .dwattr $C$DW$T$97, DW_AT_decl_column(0x14)
+     733                    
+     734                    $C$DW$T$98      .dwtag  DW_TAG_typedef
+     735                            .dwattr $C$DW$T$98, DW_AT_name("__uintptr_t")
+     736                            .dwattr $C$DW$T$98, DW_AT_type(*$C$DW$T$78)
+     737                            .dwattr $C$DW$T$98, DW_AT_language(DW_LANG_C)
+     738                            .dwattr $C$DW$T$98, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     739                            .dwattr $C$DW$T$98, DW_AT_decl_line(0x7a)
+     740                            .dwattr $C$DW$T$98, DW_AT_decl_column(0x14)
+     741                    
+     742                    $C$DW$T$99      .dwtag  DW_TAG_typedef
+     743                            .dwattr $C$DW$T$99, DW_AT_name("uintptr_t")
+     744                            .dwattr $C$DW$T$99, DW_AT_type(*$C$DW$T$98)
+     745                            .dwattr $C$DW$T$99, DW_AT_language(DW_LANG_C)
+     746                            .dwattr $C$DW$T$99, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+     747                            .dwattr $C$DW$T$99, DW_AT_decl_line(0x54)
+     748                            .dwattr $C$DW$T$99, DW_AT_decl_column(0x16)
+     749                    
+     750                    $C$DW$T$100     .dwtag  DW_TAG_typedef
+     751                            .dwattr $C$DW$T$100, DW_AT_name("__vm_offset_t")
+     752                            .dwattr $C$DW$T$100, DW_AT_type(*$C$DW$T$78)
+     753                            .dwattr $C$DW$T$100, DW_AT_language(DW_LANG_C)
+     754                            .dwattr $C$DW$T$100, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     755                            .dwattr $C$DW$T$100, DW_AT_decl_line(0x84)
+     756                            .dwattr $C$DW$T$100, DW_AT_decl_column(0x14)
+     757                    
+     758                    $C$DW$T$101     .dwtag  DW_TAG_typedef
+     759                            .dwattr $C$DW$T$101, DW_AT_name("__vm_paddr_t")
+     760                            .dwattr $C$DW$T$101, DW_AT_type(*$C$DW$T$78)
+     761                            .dwattr $C$DW$T$101, DW_AT_language(DW_LANG_C)
+     762                            .dwattr $C$DW$T$101, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     763                            .dwattr $C$DW$T$101, DW_AT_decl_line(0x85)
+     764                            .dwattr $C$DW$T$101, DW_AT_decl_column(0x14)
+     765                    
+     766                    $C$DW$T$102     .dwtag  DW_TAG_typedef
+     767                            .dwattr $C$DW$T$102, DW_AT_name("__vm_size_t")
+     768                            .dwattr $C$DW$T$102, DW_AT_type(*$C$DW$T$78)
+     769                            .dwattr $C$DW$T$102, DW_AT_language(DW_LANG_C)
+     770                            .dwattr $C$DW$T$102, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   15
+
+     771                            .dwattr $C$DW$T$102, DW_AT_decl_line(0x86)
+     772                            .dwattr $C$DW$T$102, DW_AT_decl_column(0x14)
+     773                    
+     774                    $C$DW$T$103     .dwtag  DW_TAG_typedef
+     775                            .dwattr $C$DW$T$103, DW_AT_name("uint32_t")
+     776                            .dwattr $C$DW$T$103, DW_AT_type(*$C$DW$T$78)
+     777                            .dwattr $C$DW$T$103, DW_AT_language(DW_LANG_C)
+     778                            .dwattr $C$DW$T$103, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     779                            .dwattr $C$DW$T$103, DW_AT_decl_line(0x46)
+     780                            .dwattr $C$DW$T$103, DW_AT_decl_column(0x15)
+     781                    
+     782                    $C$DW$T$104     .dwtag  DW_TAG_typedef
+     783                            .dwattr $C$DW$T$104, DW_AT_name("fract32_t")
+     784                            .dwattr $C$DW$T$104, DW_AT_type(*$C$DW$T$103)
+     785                            .dwattr $C$DW$T$104, DW_AT_language(DW_LANG_C)
+     786                            .dwattr $C$DW$T$104, DW_AT_decl_file("/home/merdak/Apps/ti/libfixmath/fract32.h")
+     787                            .dwattr $C$DW$T$104, DW_AT_decl_line(0x0b)
+     788                            .dwattr $C$DW$T$104, DW_AT_decl_column(0x12)
+     789                    
+     790                    $C$DW$T$105     .dwtag  DW_TAG_typedef
+     791                            .dwattr $C$DW$T$105, DW_AT_name("__useconds_t")
+     792                            .dwattr $C$DW$T$105, DW_AT_type(*$C$DW$T$11)
+     793                            .dwattr $C$DW$T$105, DW_AT_language(DW_LANG_C)
+     794                            .dwattr $C$DW$T$105, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     795                            .dwattr $C$DW$T$105, DW_AT_decl_line(0x4e)
+     796                            .dwattr $C$DW$T$105, DW_AT_decl_column(0x16)
+     797                    
+     798                    $C$DW$T$12      .dwtag  DW_TAG_base_type
+     799                            .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+     800                            .dwattr $C$DW$T$12, DW_AT_name("long")
+     801                            .dwattr $C$DW$T$12, DW_AT_byte_size(0x04)
+     802                    
+     803                    $C$DW$T$106     .dwtag  DW_TAG_typedef
+     804                            .dwattr $C$DW$T$106, DW_AT_name("__key_t")
+     805                            .dwattr $C$DW$T$106, DW_AT_type(*$C$DW$T$12)
+     806                            .dwattr $C$DW$T$106, DW_AT_language(DW_LANG_C)
+     807                            .dwattr $C$DW$T$106, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     808                            .dwattr $C$DW$T$106, DW_AT_decl_line(0x38)
+     809                            .dwattr $C$DW$T$106, DW_AT_decl_column(0x0f)
+     810                    
+     811                    $C$DW$T$107     .dwtag  DW_TAG_typedef
+     812                            .dwattr $C$DW$T$107, DW_AT_name("__suseconds_t")
+     813                            .dwattr $C$DW$T$107, DW_AT_type(*$C$DW$T$12)
+     814                            .dwattr $C$DW$T$107, DW_AT_language(DW_LANG_C)
+     815                            .dwattr $C$DW$T$107, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     816                            .dwattr $C$DW$T$107, DW_AT_decl_line(0x4a)
+     817                            .dwattr $C$DW$T$107, DW_AT_decl_column(0x0f)
+     818                    
+     819                    $C$DW$T$108     .dwtag  DW_TAG_typedef
+     820                            .dwattr $C$DW$T$108, DW_AT_name("_off_t")
+     821                            .dwattr $C$DW$T$108, DW_AT_type(*$C$DW$T$12)
+     822                            .dwattr $C$DW$T$108, DW_AT_language(DW_LANG_C)
+     823                            .dwattr $C$DW$T$108, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     824                            .dwattr $C$DW$T$108, DW_AT_decl_line(0x9d)
+     825                            .dwattr $C$DW$T$108, DW_AT_decl_column(0x0e)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   16
+
+     826                    
+     827                    $C$DW$T$109     .dwtag  DW_TAG_typedef
+     828                            .dwattr $C$DW$T$109, DW_AT_name("__off_t")
+     829                            .dwattr $C$DW$T$109, DW_AT_type(*$C$DW$T$108)
+     830                            .dwattr $C$DW$T$109, DW_AT_language(DW_LANG_C)
+     831                            .dwattr $C$DW$T$109, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     832                            .dwattr $C$DW$T$109, DW_AT_decl_line(0x3e)
+     833                            .dwattr $C$DW$T$109, DW_AT_decl_column(0x18)
+     834                    
+     835                    $C$DW$T$13      .dwtag  DW_TAG_base_type
+     836                            .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+     837                            .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+     838                            .dwattr $C$DW$T$13, DW_AT_byte_size(0x04)
+     839                    
+     840                    $C$DW$T$14      .dwtag  DW_TAG_base_type
+     841                            .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+     842                            .dwattr $C$DW$T$14, DW_AT_name("long long")
+     843                            .dwattr $C$DW$T$14, DW_AT_byte_size(0x08)
+     844                    
+     845                    $C$DW$T$110     .dwtag  DW_TAG_typedef
+     846                            .dwattr $C$DW$T$110, DW_AT_name("__int64_t")
+     847                            .dwattr $C$DW$T$110, DW_AT_type(*$C$DW$T$14)
+     848                            .dwattr $C$DW$T$110, DW_AT_language(DW_LANG_C)
+     849                            .dwattr $C$DW$T$110, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     850                            .dwattr $C$DW$T$110, DW_AT_decl_line(0x54)
+     851                            .dwattr $C$DW$T$110, DW_AT_decl_column(0x14)
+     852                    
+     853                    $C$DW$T$111     .dwtag  DW_TAG_typedef
+     854                            .dwattr $C$DW$T$111, DW_AT_name("__blkcnt_t")
+     855                            .dwattr $C$DW$T$111, DW_AT_type(*$C$DW$T$110)
+     856                            .dwattr $C$DW$T$111, DW_AT_language(DW_LANG_C)
+     857                            .dwattr $C$DW$T$111, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     858                            .dwattr $C$DW$T$111, DW_AT_decl_line(0x30)
+     859                            .dwattr $C$DW$T$111, DW_AT_decl_column(0x13)
+     860                    
+     861                    $C$DW$T$112     .dwtag  DW_TAG_typedef
+     862                            .dwattr $C$DW$T$112, DW_AT_name("__id_t")
+     863                            .dwattr $C$DW$T$112, DW_AT_type(*$C$DW$T$110)
+     864                            .dwattr $C$DW$T$112, DW_AT_language(DW_LANG_C)
+     865                            .dwattr $C$DW$T$112, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     866                            .dwattr $C$DW$T$112, DW_AT_decl_line(0x36)
+     867                            .dwattr $C$DW$T$112, DW_AT_decl_column(0x13)
+     868                    
+     869                    $C$DW$T$113     .dwtag  DW_TAG_typedef
+     870                            .dwattr $C$DW$T$113, DW_AT_name("__int_fast64_t")
+     871                            .dwattr $C$DW$T$113, DW_AT_type(*$C$DW$T$110)
+     872                            .dwattr $C$DW$T$113, DW_AT_language(DW_LANG_C)
+     873                            .dwattr $C$DW$T$113, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     874                            .dwattr $C$DW$T$113, DW_AT_decl_line(0x68)
+     875                            .dwattr $C$DW$T$113, DW_AT_decl_column(0x13)
+     876                    
+     877                    $C$DW$T$114     .dwtag  DW_TAG_typedef
+     878                            .dwattr $C$DW$T$114, DW_AT_name("int_fast64_t")
+     879                            .dwattr $C$DW$T$114, DW_AT_type(*$C$DW$T$113)
+     880                            .dwattr $C$DW$T$114, DW_AT_language(DW_LANG_C)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   17
+
+     881                            .dwattr $C$DW$T$114, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     882                            .dwattr $C$DW$T$114, DW_AT_decl_line(0x37)
+     883                            .dwattr $C$DW$T$114, DW_AT_decl_column(0x19)
+     884                    
+     885                    $C$DW$T$115     .dwtag  DW_TAG_typedef
+     886                            .dwattr $C$DW$T$115, DW_AT_name("__int_least64_t")
+     887                            .dwattr $C$DW$T$115, DW_AT_type(*$C$DW$T$110)
+     888                            .dwattr $C$DW$T$115, DW_AT_language(DW_LANG_C)
+     889                            .dwattr $C$DW$T$115, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     890                            .dwattr $C$DW$T$115, DW_AT_decl_line(0x6c)
+     891                            .dwattr $C$DW$T$115, DW_AT_decl_column(0x13)
+     892                    
+     893                    $C$DW$T$116     .dwtag  DW_TAG_typedef
+     894                            .dwattr $C$DW$T$116, DW_AT_name("int_least64_t")
+     895                            .dwattr $C$DW$T$116, DW_AT_type(*$C$DW$T$115)
+     896                            .dwattr $C$DW$T$116, DW_AT_language(DW_LANG_C)
+     897                            .dwattr $C$DW$T$116, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     898                            .dwattr $C$DW$T$116, DW_AT_decl_line(0x2d)
+     899                            .dwattr $C$DW$T$116, DW_AT_decl_column(0x1a)
+     900                    
+     901                    $C$DW$T$117     .dwtag  DW_TAG_typedef
+     902                            .dwattr $C$DW$T$117, DW_AT_name("__intmax_t")
+     903                            .dwattr $C$DW$T$117, DW_AT_type(*$C$DW$T$110)
+     904                            .dwattr $C$DW$T$117, DW_AT_language(DW_LANG_C)
+     905                            .dwattr $C$DW$T$117, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     906                            .dwattr $C$DW$T$117, DW_AT_decl_line(0x63)
+     907                            .dwattr $C$DW$T$117, DW_AT_decl_column(0x13)
+     908                    
+     909                    $C$DW$T$118     .dwtag  DW_TAG_typedef
+     910                            .dwattr $C$DW$T$118, DW_AT_name("intmax_t")
+     911                            .dwattr $C$DW$T$118, DW_AT_type(*$C$DW$T$117)
+     912                            .dwattr $C$DW$T$118, DW_AT_language(DW_LANG_C)
+     913                            .dwattr $C$DW$T$118, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     914                            .dwattr $C$DW$T$118, DW_AT_decl_line(0x58)
+     915                            .dwattr $C$DW$T$118, DW_AT_decl_column(0x15)
+     916                    
+     917                    $C$DW$T$119     .dwtag  DW_TAG_typedef
+     918                            .dwattr $C$DW$T$119, DW_AT_name("__off64_t")
+     919                            .dwattr $C$DW$T$119, DW_AT_type(*$C$DW$T$110)
+     920                            .dwattr $C$DW$T$119, DW_AT_language(DW_LANG_C)
+     921                            .dwattr $C$DW$T$119, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     922                            .dwattr $C$DW$T$119, DW_AT_decl_line(0x3f)
+     923                            .dwattr $C$DW$T$119, DW_AT_decl_column(0x13)
+     924                    
+     925                    $C$DW$T$120     .dwtag  DW_TAG_typedef
+     926                            .dwattr $C$DW$T$120, DW_AT_name("__rlim_t")
+     927                            .dwattr $C$DW$T$120, DW_AT_type(*$C$DW$T$110)
+     928                            .dwattr $C$DW$T$120, DW_AT_language(DW_LANG_C)
+     929                            .dwattr $C$DW$T$120, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     930                            .dwattr $C$DW$T$120, DW_AT_decl_line(0x41)
+     931                            .dwattr $C$DW$T$120, DW_AT_decl_column(0x13)
+     932                    
+     933                    $C$DW$T$121     .dwtag  DW_TAG_typedef
+     934                            .dwattr $C$DW$T$121, DW_AT_name("int64_t")
+     935                            .dwattr $C$DW$T$121, DW_AT_type(*$C$DW$T$110)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   18
+
+     936                            .dwattr $C$DW$T$121, DW_AT_language(DW_LANG_C)
+     937                            .dwattr $C$DW$T$121, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     938                            .dwattr $C$DW$T$121, DW_AT_decl_line(0x35)
+     939                            .dwattr $C$DW$T$121, DW_AT_decl_column(0x14)
+     940                    
+     941                    $C$DW$T$15      .dwtag  DW_TAG_base_type
+     942                            .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+     943                            .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+     944                            .dwattr $C$DW$T$15, DW_AT_byte_size(0x08)
+     945                    
+     946                    $C$DW$T$122     .dwtag  DW_TAG_typedef
+     947                            .dwattr $C$DW$T$122, DW_AT_name("__uint64_t")
+     948                            .dwattr $C$DW$T$122, DW_AT_type(*$C$DW$T$15)
+     949                            .dwattr $C$DW$T$122, DW_AT_language(DW_LANG_C)
+     950                            .dwattr $C$DW$T$122, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     951                            .dwattr $C$DW$T$122, DW_AT_decl_line(0x59)
+     952                            .dwattr $C$DW$T$122, DW_AT_decl_column(0x1c)
+     953                    
+     954                    $C$DW$T$123     .dwtag  DW_TAG_typedef
+     955                            .dwattr $C$DW$T$123, DW_AT_name("__dev_t")
+     956                            .dwattr $C$DW$T$123, DW_AT_type(*$C$DW$T$122)
+     957                            .dwattr $C$DW$T$123, DW_AT_language(DW_LANG_C)
+     958                            .dwattr $C$DW$T$123, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     959                            .dwattr $C$DW$T$123, DW_AT_decl_line(0x7f)
+     960                            .dwattr $C$DW$T$123, DW_AT_decl_column(0x14)
+     961                    
+     962                    $C$DW$T$124     .dwtag  DW_TAG_typedef
+     963                            .dwattr $C$DW$T$124, DW_AT_name("__fsblkcnt_t")
+     964                            .dwattr $C$DW$T$124, DW_AT_type(*$C$DW$T$122)
+     965                            .dwattr $C$DW$T$124, DW_AT_language(DW_LANG_C)
+     966                            .dwattr $C$DW$T$124, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     967                            .dwattr $C$DW$T$124, DW_AT_decl_line(0x33)
+     968                            .dwattr $C$DW$T$124, DW_AT_decl_column(0x14)
+     969                    
+     970                    $C$DW$T$125     .dwtag  DW_TAG_typedef
+     971                            .dwattr $C$DW$T$125, DW_AT_name("__fsfilcnt_t")
+     972                            .dwattr $C$DW$T$125, DW_AT_type(*$C$DW$T$122)
+     973                            .dwattr $C$DW$T$125, DW_AT_language(DW_LANG_C)
+     974                            .dwattr $C$DW$T$125, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     975                            .dwattr $C$DW$T$125, DW_AT_decl_line(0x34)
+     976                            .dwattr $C$DW$T$125, DW_AT_decl_column(0x14)
+     977                    
+     978                    $C$DW$T$126     .dwtag  DW_TAG_typedef
+     979                            .dwattr $C$DW$T$126, DW_AT_name("__ino_t")
+     980                            .dwattr $C$DW$T$126, DW_AT_type(*$C$DW$T$122)
+     981                            .dwattr $C$DW$T$126, DW_AT_language(DW_LANG_C)
+     982                            .dwattr $C$DW$T$126, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     983                            .dwattr $C$DW$T$126, DW_AT_decl_line(0x37)
+     984                            .dwattr $C$DW$T$126, DW_AT_decl_column(0x14)
+     985                    
+     986                    $C$DW$T$127     .dwtag  DW_TAG_typedef
+     987                            .dwattr $C$DW$T$127, DW_AT_name("__nlink_t")
+     988                            .dwattr $C$DW$T$127, DW_AT_type(*$C$DW$T$122)
+     989                            .dwattr $C$DW$T$127, DW_AT_language(DW_LANG_C)
+     990                            .dwattr $C$DW$T$127, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   19
+
+     991                            .dwattr $C$DW$T$127, DW_AT_decl_line(0x3d)
+     992                            .dwattr $C$DW$T$127, DW_AT_decl_column(0x14)
+     993                    
+     994                    $C$DW$T$128     .dwtag  DW_TAG_typedef
+     995                            .dwattr $C$DW$T$128, DW_AT_name("__uint_fast64_t")
+     996                            .dwattr $C$DW$T$128, DW_AT_type(*$C$DW$T$122)
+     997                            .dwattr $C$DW$T$128, DW_AT_language(DW_LANG_C)
+     998                            .dwattr $C$DW$T$128, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+     999                            .dwattr $C$DW$T$128, DW_AT_decl_line(0x7e)
+    1000                            .dwattr $C$DW$T$128, DW_AT_decl_column(0x14)
+    1001                    
+    1002                    $C$DW$T$129     .dwtag  DW_TAG_typedef
+    1003                            .dwattr $C$DW$T$129, DW_AT_name("uint_fast64_t")
+    1004                            .dwattr $C$DW$T$129, DW_AT_type(*$C$DW$T$128)
+    1005                            .dwattr $C$DW$T$129, DW_AT_language(DW_LANG_C)
+    1006                            .dwattr $C$DW$T$129, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1007                            .dwattr $C$DW$T$129, DW_AT_decl_line(0x3c)
+    1008                            .dwattr $C$DW$T$129, DW_AT_decl_column(0x1a)
+    1009                    
+    1010                    $C$DW$T$130     .dwtag  DW_TAG_typedef
+    1011                            .dwattr $C$DW$T$130, DW_AT_name("__uint_least64_t")
+    1012                            .dwattr $C$DW$T$130, DW_AT_type(*$C$DW$T$122)
+    1013                            .dwattr $C$DW$T$130, DW_AT_language(DW_LANG_C)
+    1014                            .dwattr $C$DW$T$130, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1015                            .dwattr $C$DW$T$130, DW_AT_decl_line(0x82)
+    1016                            .dwattr $C$DW$T$130, DW_AT_decl_column(0x14)
+    1017                    
+    1018                    $C$DW$T$131     .dwtag  DW_TAG_typedef
+    1019                            .dwattr $C$DW$T$131, DW_AT_name("uint_least64_t")
+    1020                            .dwattr $C$DW$T$131, DW_AT_type(*$C$DW$T$130)
+    1021                            .dwattr $C$DW$T$131, DW_AT_language(DW_LANG_C)
+    1022                            .dwattr $C$DW$T$131, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1023                            .dwattr $C$DW$T$131, DW_AT_decl_line(0x32)
+    1024                            .dwattr $C$DW$T$131, DW_AT_decl_column(0x1a)
+    1025                    
+    1026                    $C$DW$T$132     .dwtag  DW_TAG_typedef
+    1027                            .dwattr $C$DW$T$132, DW_AT_name("__uintmax_t")
+    1028                            .dwattr $C$DW$T$132, DW_AT_type(*$C$DW$T$122)
+    1029                            .dwattr $C$DW$T$132, DW_AT_language(DW_LANG_C)
+    1030                            .dwattr $C$DW$T$132, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1031                            .dwattr $C$DW$T$132, DW_AT_decl_line(0x79)
+    1032                            .dwattr $C$DW$T$132, DW_AT_decl_column(0x14)
+    1033                    
+    1034                    $C$DW$T$133     .dwtag  DW_TAG_typedef
+    1035                            .dwattr $C$DW$T$133, DW_AT_name("__rman_res_t")
+    1036                            .dwattr $C$DW$T$133, DW_AT_type(*$C$DW$T$132)
+    1037                            .dwattr $C$DW$T$133, DW_AT_language(DW_LANG_C)
+    1038                            .dwattr $C$DW$T$133, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1039                            .dwattr $C$DW$T$133, DW_AT_decl_line(0x9a)
+    1040                            .dwattr $C$DW$T$133, DW_AT_decl_column(0x19)
+    1041                    
+    1042                    $C$DW$T$134     .dwtag  DW_TAG_typedef
+    1043                            .dwattr $C$DW$T$134, DW_AT_name("uintmax_t")
+    1044                            .dwattr $C$DW$T$134, DW_AT_type(*$C$DW$T$132)
+    1045                            .dwattr $C$DW$T$134, DW_AT_language(DW_LANG_C)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   20
+
+    1046                            .dwattr $C$DW$T$134, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1047                            .dwattr $C$DW$T$134, DW_AT_decl_line(0x5c)
+    1048                            .dwattr $C$DW$T$134, DW_AT_decl_column(0x16)
+    1049                    
+    1050                    $C$DW$T$135     .dwtag  DW_TAG_typedef
+    1051                            .dwattr $C$DW$T$135, DW_AT_name("uint64_t")
+    1052                            .dwattr $C$DW$T$135, DW_AT_type(*$C$DW$T$122)
+    1053                            .dwattr $C$DW$T$135, DW_AT_language(DW_LANG_C)
+    1054                            .dwattr $C$DW$T$135, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1055                            .dwattr $C$DW$T$135, DW_AT_decl_line(0x4b)
+    1056                            .dwattr $C$DW$T$135, DW_AT_decl_column(0x15)
+    1057                    
+    1058                    $C$DW$T$16      .dwtag  DW_TAG_base_type
+    1059                            .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+    1060                            .dwattr $C$DW$T$16, DW_AT_name("float")
+    1061                            .dwattr $C$DW$T$16, DW_AT_byte_size(0x04)
+    1062                    
+    1063                    $C$DW$T$136     .dwtag  DW_TAG_typedef
+    1064                            .dwattr $C$DW$T$136, DW_AT_name("__float_t")
+    1065                            .dwattr $C$DW$T$136, DW_AT_type(*$C$DW$T$16)
+    1066                            .dwattr $C$DW$T$136, DW_AT_language(DW_LANG_C)
+    1067                            .dwattr $C$DW$T$136, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1068                            .dwattr $C$DW$T$136, DW_AT_decl_line(0x61)
+    1069                            .dwattr $C$DW$T$136, DW_AT_decl_column(0x10)
+    1070                    
+    1071                    $C$DW$T$17      .dwtag  DW_TAG_base_type
+    1072                            .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+    1073                            .dwattr $C$DW$T$17, DW_AT_name("double")
+    1074                            .dwattr $C$DW$T$17, DW_AT_byte_size(0x08)
+    1075                    
+    1076                    $C$DW$T$137     .dwtag  DW_TAG_typedef
+    1077                            .dwattr $C$DW$T$137, DW_AT_name("__double_t")
+    1078                            .dwattr $C$DW$T$137, DW_AT_type(*$C$DW$T$17)
+    1079                            .dwattr $C$DW$T$137, DW_AT_language(DW_LANG_C)
+    1080                            .dwattr $C$DW$T$137, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1081                            .dwattr $C$DW$T$137, DW_AT_decl_line(0x60)
+    1082                            .dwattr $C$DW$T$137, DW_AT_decl_column(0x11)
+    1083                    
+    1084                    $C$DW$T$18      .dwtag  DW_TAG_base_type
+    1085                            .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+    1086                            .dwattr $C$DW$T$18, DW_AT_name("long double")
+    1087                            .dwattr $C$DW$T$18, DW_AT_byte_size(0x08)
+    1088                    
+    1089                    
+    1090                    $C$DW$T$19      .dwtag  DW_TAG_structure_type
+    1091                            .dwattr $C$DW$T$19, DW_AT_name("__mq")
+    1092                            .dwattr $C$DW$T$19, DW_AT_declaration
+    1093                            .dwattr $C$DW$T$19, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+    1094                            .dwattr $C$DW$T$19, DW_AT_decl_line(0x4c)
+    1095                            .dwattr $C$DW$T$19, DW_AT_decl_column(0x10)
+    1096                            .dwendtag $C$DW$T$19
+    1097                    
+    1098                    $C$DW$T$138     .dwtag  DW_TAG_pointer_type
+    1099                            .dwattr $C$DW$T$138, DW_AT_type(*$C$DW$T$19)
+    1100                            .dwattr $C$DW$T$138, DW_AT_address_class(0x20)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   21
+
+    1101                    
+    1102                    $C$DW$T$139     .dwtag  DW_TAG_typedef
+    1103                            .dwattr $C$DW$T$139, DW_AT_name("__mqd_t")
+    1104                            .dwattr $C$DW$T$139, DW_AT_type(*$C$DW$T$138)
+    1105                            .dwattr $C$DW$T$139, DW_AT_language(DW_LANG_C)
+    1106                            .dwattr $C$DW$T$139, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1107                            .dwattr $C$DW$T$139, DW_AT_decl_line(0x4c)
+    1108                            .dwattr $C$DW$T$139, DW_AT_decl_column(0x16)
+    1109                    
+    1110                    
+    1111                    $C$DW$T$20      .dwtag  DW_TAG_structure_type
+    1112                            .dwattr $C$DW$T$20, DW_AT_name("__timer")
+    1113                            .dwattr $C$DW$T$20, DW_AT_declaration
+    1114                            .dwattr $C$DW$T$20, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+    1115                            .dwattr $C$DW$T$20, DW_AT_decl_line(0x4b)
+    1116                            .dwattr $C$DW$T$20, DW_AT_decl_column(0x10)
+    1117                            .dwendtag $C$DW$T$20
+    1118                    
+    1119                    $C$DW$T$140     .dwtag  DW_TAG_pointer_type
+    1120                            .dwattr $C$DW$T$140, DW_AT_type(*$C$DW$T$20)
+    1121                            .dwattr $C$DW$T$140, DW_AT_address_class(0x20)
+    1122                    
+    1123                    $C$DW$T$141     .dwtag  DW_TAG_typedef
+    1124                            .dwattr $C$DW$T$141, DW_AT_name("__timer_t")
+    1125                            .dwattr $C$DW$T$141, DW_AT_type(*$C$DW$T$140)
+    1126                            .dwattr $C$DW$T$141, DW_AT_language(DW_LANG_C)
+    1127                            .dwattr $C$DW$T$141, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1128                            .dwattr $C$DW$T$141, DW_AT_decl_line(0x4b)
+    1129                            .dwattr $C$DW$T$141, DW_AT_decl_column(0x19)
+    1130                    
+    1131                    
+    1132                    $C$DW$T$22      .dwtag  DW_TAG_structure_type
+    1133                            .dwattr $C$DW$T$22, DW_AT_name("__va_list_t")
+    1134                            .dwattr $C$DW$T$22, DW_AT_byte_size(0x04)
+    1135                    $C$DW$5 .dwtag  DW_TAG_member
+    1136                            .dwattr $C$DW$5, DW_AT_type(*$C$DW$T$3)
+    1137                            .dwattr $C$DW$5, DW_AT_name("__ap")
+    1138                            .dwattr $C$DW$5, DW_AT_TI_symbol_name("__ap")
+    1139                            .dwattr $C$DW$5, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+    1140                            .dwattr $C$DW$5, DW_AT_accessibility(DW_ACCESS_public)
+    1141                            .dwattr $C$DW$5, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_2
+    1142                            .dwattr $C$DW$5, DW_AT_decl_line(0xa4)
+    1143                            .dwattr $C$DW$5, DW_AT_decl_column(0x0c)
+    1144                    
+    1145                            .dwattr $C$DW$T$22, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-ar
+    1146                            .dwattr $C$DW$T$22, DW_AT_decl_line(0xa3)
+    1147                            .dwattr $C$DW$T$22, DW_AT_decl_column(0x10)
+    1148                            .dwendtag $C$DW$T$22
+    1149                    
+    1150                    $C$DW$T$142     .dwtag  DW_TAG_typedef
+    1151                            .dwattr $C$DW$T$142, DW_AT_name("__va_list")
+    1152                            .dwattr $C$DW$T$142, DW_AT_type(*$C$DW$T$22)
+    1153                            .dwattr $C$DW$T$142, DW_AT_language(DW_LANG_C)
+    1154                            .dwattr $C$DW$T$142, DW_AT_decl_file("/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-a
+    1155                            .dwattr $C$DW$T$142, DW_AT_decl_line(0xa5)
+TI ARM Assembler Unix v20.2.4 Fri Apr  2 01:02:08 2021
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+fract_madgwick.asm                                                   PAGE   22
+
+    1156                            .dwattr $C$DW$T$142, DW_AT_decl_column(0x03)
+    1157                    
+    1158                            .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+    1159                            .dwendtag $C$DW$CU
+    1160                    
+
+No Assembly Errors, No Assembly Warnings

@@ -1,6 +1,7 @@
 // koltypes.h
 // Bize özel tip tanýmlarý
 
+
 typedef unsigned char         U08;
 typedef unsigned short        U16;  // !
 typedef unsigned int          U32;  // !

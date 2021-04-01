@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+encoding//App/flight.c=UTF-8
+encoding//Debug/App/subdir_rules.mk=UTF-8
+encoding//Debug/App/subdir_vars.mk=UTF-8
 encoding//Debug/BMP280/subdir_rules.mk=UTF-8
 encoding//Debug/BMP280/subdir_vars.mk=UTF-8
 encoding//Debug/MPU9250/subdir_rules.mk=UTF-8
@@ -12,5 +15,5 @@ encoding//Debug/smartrf_settings/subdir_vars.mk=UTF-8
 encoding//Debug/sources.mk=UTF-8
 encoding//Debug/subdir_rules.mk=UTF-8
 encoding//Debug/subdir_vars.mk=UTF-8
-encoding/flight.c=UTF-8
-encoding/radio.c=UTF-8
+encoding//MPU9250/inv_mpu.c=UTF-8
+encoding//MPU9250/inv_mpu.h=UTF-8

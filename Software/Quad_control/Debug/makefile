@@ -12,8 +12,8 @@ ORDERED_OBJS += \
 "./CC2640R2_LAUNCHXL_fxns.obj" \
 "./ccfg.obj" \
 "./main.obj" \
-"./radio.obj" \
-"./uart.obj" \
+"./App/radio.obj" \
+"./App/uart.obj" \
 "./easylink/EasyLink.obj" \
 "./easylink/easylink_config.obj" \
 "./smartrf_settings/smartrf_settings.obj" \
@@ -37,9 +37,11 @@ RMDIR := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include App/subdir_vars.mk
 -include easylink/subdir_vars.mk
 -include smartrf_settings/subdir_vars.mk
 -include subdir_rules.mk
+-include App/subdir_rules.mk
 -include easylink/subdir_rules.mk
 -include smartrf_settings/subdir_rules.mk
 -include objects.mk
@@ -175,8 +177,8 @@ Quad_control.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "CC2640R2_LAUNCHXL.obj" "CC2640R2_LAUNCHXL_fxns.obj" "ccfg.obj" "main.obj" "radio.obj" "uart.obj" "easylink/EasyLink.obj" "easylink/easylink_config.obj" "smartrf_settings/smartrf_settings.obj" "smartrf_settings/smartrf_settings_predefined.obj" 
-	-$(RM) "CC2640R2_LAUNCHXL.d" "CC2640R2_LAUNCHXL_fxns.d" "ccfg.d" "main.d" "radio.d" "uart.d" "easylink/EasyLink.d" "easylink/easylink_config.d" "smartrf_settings/smartrf_settings.d" "smartrf_settings/smartrf_settings_predefined.d" 
+	-$(RM) "CC2640R2_LAUNCHXL.obj" "CC2640R2_LAUNCHXL_fxns.obj" "ccfg.obj" "main.obj" "App/radio.obj" "App/uart.obj" "easylink/EasyLink.obj" "easylink/easylink_config.obj" "smartrf_settings/smartrf_settings.obj" "smartrf_settings/smartrf_settings_predefined.obj" 
+	-$(RM) "CC2640R2_LAUNCHXL.d" "CC2640R2_LAUNCHXL_fxns.d" "ccfg.d" "main.d" "App/radio.d" "App/uart.d" "easylink/EasyLink.d" "easylink/easylink_config.d" "smartrf_settings/smartrf_settings.d" "smartrf_settings/smartrf_settings_predefined.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

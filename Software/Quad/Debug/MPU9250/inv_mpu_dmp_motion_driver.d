@@ -19,6 +19,7 @@ MPU9250/inv_mpu_dmp_motion_driver.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/co
 MPU9250/inv_mpu_dmp_motion_driver.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/_defs.h
 MPU9250/inv_mpu_dmp_motion_driver.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/machine/_limits.h
 MPU9250/inv_mpu_dmp_motion_driver.obj: ../MPU9250/inv_mpu.h
+MPU9250/inv_mpu_dmp_motion_driver.obj: /home/merdak/KOLTEST/TIV10/Quad/koltypes.h
 MPU9250/inv_mpu_dmp_motion_driver.obj: ../MPU9250/inv_mpu_dmp_motion_driver.h
 MPU9250/inv_mpu_dmp_motion_driver.obj: ../MPU9250/dmpKey.h
 MPU9250/inv_mpu_dmp_motion_driver.obj: ../MPU9250/dmpmap.h
@@ -42,6 +43,7 @@ MPU9250/inv_mpu_dmp_motion_driver.obj: ../MPU9250/dmpmap.h
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/_defs.h: 
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/machine/_limits.h: 
 ../MPU9250/inv_mpu.h: 
+/home/merdak/KOLTEST/TIV10/Quad/koltypes.h: 
 ../MPU9250/inv_mpu_dmp_motion_driver.h: 
 ../MPU9250/dmpKey.h: 
 ../MPU9250/dmpmap.h: 

@@ -227,6 +227,12 @@ radio.obj: ../easylink/easylink_config.h
 radio.obj: ../koltypes.h
 radio.obj: ../main.h
 radio.obj: ../flight.h
+radio.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/timer/GPTimerCC26XX.h
+radio.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/dpl/HwiP.h
+radio.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/inc/hw_gpt.h
+radio.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/event.h
+radio.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/../inc/hw_event.h
+radio.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/timer.h
 radio.obj: ../radio.h
 
 ../radio.c: 
@@ -456,4 +462,10 @@ radio.obj: ../radio.h
 ../koltypes.h: 
 ../main.h: 
 ../flight.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/timer/GPTimerCC26XX.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/dpl/HwiP.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/inc/hw_gpt.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/event.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/../inc/hw_event.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/timer.h: 
 ../radio.h: 

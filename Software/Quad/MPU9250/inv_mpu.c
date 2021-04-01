@@ -25,7 +25,7 @@
 #include "inv_mpu.h"
 
 #include "koltypes.h"
-#include "flight.h"
+#include "App/flight.h"
 
 /* The following functions must be defined for this platform:
  * i2c_write(unsigned char slave_addr, unsigned char reg_addr,
@@ -104,14 +104,14 @@ struct gyro_reg_s {
     unsigned char lpf;
     unsigned char prod_id;
     unsigned char user_ctrl;
-    unsigned char fifo_en;          //
+    unsigned char fifo_en;
     unsigned char gyro_cfg;
     unsigned char accel_cfg;
     unsigned char accel_cfg2;
     unsigned char lp_accel_odr;
     unsigned char motion_thr;
     unsigned char motion_dur;
-    unsigned char fifo_count_h;     //
+    unsigned char fifo_count_h;
     unsigned char fifo_r_w;
     unsigned char raw_gyro;
     unsigned char raw_accel;
@@ -646,84 +646,67 @@ int mpu_read_reg(unsigned char reg, unsigned char *data)
  *  @param[in]  int_param   Platform-specific parameters to interrupt API.
  *  @return     0 if successful.
  */
+
+MPU_t mpu;
+
+#define ACC_FSR  3 // (0..3) --> [  g  ] (�2g ; �4g ; �8g  ; �16g)
+#define GYR_FSR  3 // (0..3) --> [deg/s] (250 ; 500 ; 1000 ; 2000)
+
 int mpu_init(struct int_param_s *int_param)
-{
-    unsigned char data[6];
+{ // mpu general config
+  U08 data[6];
+  data[0] = 0x80;
+  i2c_write(st.hw->addr, st.reg->pwr_mgmt_1, 1, &data[0]);   // Reset device
+  delay_ms(100);
+  data[1] = 0x00;
+  i2c_write(st.hw->addr, st.reg->pwr_mgmt_1, 1, &data[1]);   // Wake up chip
+  data[2] = 0x01;
+  i2c_write(st.hw->addr, st.reg->int_enable, 1, &data[2]);   // Data ready int enable
+  data[3] = 0x10;
+  i2c_write(st.hw->addr, st.reg->int_pin_cfg, 1, &data[3]);  // Clear data ready flag with any read operation
 
-    /* Reset device. */
-    data[0] = BIT_RESET;
-    if (i2c_write(st.hw->addr, st.reg->pwr_mgmt_1, 1, data))
-        return -1;
-    delay_ms(100);
+  // gyro, acc config
+  U08 tmp[6]={ 0x00, 0x08, 0x10, 0x18, 0x01, 0x40};                // Scales and dlpf
+  F32 gdiv[4]={ 250,500,1000,2000 };
+  F32 adiv[4]={   2,  4,   8,  16 };
 
-    /* Wake up chip. */
-    data[0] = 0x00;
-    if (i2c_write(st.hw->addr, st.reg->pwr_mgmt_1, 1, data))
-        return -1;
+  i2c_write(st.hw->addr, st.reg->gyro_cfg, 1, &tmp[3]);      // FS 3 both, and gyro fchoice 11 (1B)
+  i2c_write(st.hw->addr, st.reg->accel_cfg, 1, &tmp[3]);     // 2000deg/s and 16g
+  i2c_write(st.hw->addr, st.reg->accel_cfg2, 1, &tmp[5]);
+  mpu.fsG=1.0f/(32768.0f/gdiv[GYR_FSR]);
+  mpu.fsA=1.0f/(32768.0f/adiv[ACC_FSR]);
 
-   st.chip_cfg.accel_half = 0;
-
-#ifdef MPU6500
-    /* MPU6500 shares 4kB of memory between the DMP and the FIFO. Since the
-     * first 3kB are needed by the DMP, we'll use the last 1kB for the FIFO.
-     */
-    data[0] = BIT_FIFO_SIZE_1024 | 0x8;
-    if (i2c_write(st.hw->addr, st.reg->accel_cfg2, 1, data))
-        return -1;
-#endif
-
-    /* Set to invalid values to ensure no I2C writes are skipped. */
-    st.chip_cfg.sensors = 0xFF;
-    st.chip_cfg.gyro_fsr = 0xFF;
-    st.chip_cfg.accel_fsr = 0xFF;
-    st.chip_cfg.lpf = 0xFF;
-    st.chip_cfg.sample_rate = 0xFFFF;
-    st.chip_cfg.fifo_enable = 0xFF;
-    st.chip_cfg.bypass_mode = 0xFF;
-#ifdef AK89xx_SECONDARY
-    st.chip_cfg.compass_sample_rate = 0xFFFF;
-#endif
-    /* mpu_set_sensors always preserves this setting. */
-    st.chip_cfg.clk_src = INV_CLK_PLL;
-    /* Handled in next call to mpu_set_bypass. */
-    st.chip_cfg.active_low_int = 1;
-    st.chip_cfg.latched_int = 0;
-    st.chip_cfg.int_motion_only = 0;
-    st.chip_cfg.lp_accel_mode = 0;
-    memset(&st.chip_cfg.cache, 0, sizeof(st.chip_cfg.cache));
-    st.chip_cfg.dmp_on = 0;
-    st.chip_cfg.dmp_loaded = 0;
-    st.chip_cfg.dmp_sample_rate = 0;
-
-    if (mpu_set_gyro_fsr(2000))
-        return -1;
-    if (mpu_set_accel_fsr(2))
-        return -1;
-    if (mpu_set_lpf(42))
-        return -1;
-    if (mpu_set_sample_rate(50))
-        return -1;
-    if (mpu_configure_fifo(0))
-        return -1;
-
-#ifndef EMPL_TARGET_STM32F4    
-    if (int_param)
-        reg_int_cb(int_param);
-#endif
-
-#ifdef AK89xx_SECONDARY
-    setup_compass();
-    if (mpu_set_compass_sample_rate(10))
-        return -1;
-#else
-    /* Already disabled by setup_compass. */
-    if (mpu_set_bypass(0))
-        return -1;
-#endif
-
-    mpu_set_sensors(0);
-    return 0;
+  i2c_write(st.hw->addr, st.reg->lpf, 1, &tmp[4]);           // dlpf
+  // Set gyro sample rate
+  data[4] = 0x00;
+  i2c_write(st.hw->addr, st.reg->rate_div, 1, &data[4]);     // Gyro @8KHz
+  return 0;
 }
+
+#define INV_340     (1.0f/340.0f)
+#define MPU_OFS(i)  mpu.val[(i)]=mpu.raw[(i)]-mpu.ofs[(i)]
+void mpu_rd()
+{ U08* tmp=(U08*)&mpu.tmp[0];
+  i2c_read(st.hw->addr, st.reg->raw_accel, 16, tmp);
+  //Accelerometer
+  mpu.raw[0] = (F32)(I16)((tmp[ 0]<<8) | tmp[ 1]);
+  mpu.raw[1] = (F32)(I16)((tmp[ 2]<<8) | tmp[ 3]);
+  mpu.raw[2] = (F32)(I16)((tmp[ 4]<<8) | tmp[ 5]);
+  MPU_OFS(0); MPU_OFS(1); MPU_OFS(2);                              // Offset
+  mpu.phy[0]=mpu.val[0]*mpu.fsA;                                   // Convert to [g]
+  mpu.phy[1]=mpu.val[1]*mpu.fsA;
+  mpu.phy[2]=mpu.val[2]*mpu.fsA;
+  //Gyroscope
+  mpu.raw[3] = (F32)(I16)((tmp[ 8]<<8) | tmp[ 9]);
+  mpu.raw[4] = (F32)(I16)((tmp[10]<<8) | tmp[11]);
+  mpu.raw[5] = (F32)(I16)((tmp[12]<<8) | tmp[13]);
+  MPU_OFS(3); MPU_OFS(4); MPU_OFS(5);                              // Offset
+  mpu.phy[3] = mpu.val[3]*mpu.fsG;                                 // Convert to [deg/s]
+  mpu.phy[4] = mpu.val[4]*mpu.fsG;
+  mpu.phy[5] = mpu.val[5]*mpu.fsG;
+  //Temperature
+  mpu.tem    = (F32)(I16)((tmp[ 6]<<8) | tmp[ 7])*INV_340+36.53f;  // [°C]
+; }
 
 /**
  *  @brief      Enter low-power accel-only mode.
@@ -1792,7 +1775,7 @@ int dak_read_fifo(unsigned short length, unsigned char *data)
   unsigned char tmp[2];
   i2c_read(st.hw->addr, st.reg->fifo_r_w, length, data); // Read Fifo
   i2c_read(st.hw->addr, st.reg->int_status, 1, tmp);     // Read Int Sts
-  if(tmp[0] & BIT_FIFO_OVERFLOW){ /*dak_reset_fifo();*/ mpu_err++; }
+  if(tmp[0] & BIT_FIFO_OVERFLOW){ dak_reset_fifo(); mpu_err++; }
   return 0;
 }
 

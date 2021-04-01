@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker Unix v20.2.4                   
 ******************************************************************************
->> Linked Mon Mar  8 22:11:15 2021
+>> Linked Mon Mar 29 00:33:59 2021
 
 OUTPUT FILE NAME:   <Quad_control.out>
 ENTRY POINT SYMBOL: "ResetISR"  address: 00005f19
@@ -1188,14 +1188,18 @@ MODULE SUMMARY
        Module                            code    ro data   rw data
        ------                            ----    -------   -------
     ./
-       radio.obj                         810     0         1372   
-       uart.obj                          692     0         1200   
        CC2640R2_LAUNCHXL.obj             36      370       684    
        CC2640R2_LAUNCHXL_fxns.obj        280     28        0      
        main.obj                          116     0         92     
        ccfg.obj                          0       88        0      
     +--+---------------------------------+-------+---------+---------+
-       Total:                            1934    486       3348   
+       Total:                            432     486       776    
+                                                                  
+    ./App/
+       radio.obj                         810     0         1372   
+       uart.obj                          692     0         1200   
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            1502    0         2572   
                                                                   
     ./easylink/
        EasyLink.obj                      3532    16        967    

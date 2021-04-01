@@ -17,8 +17,8 @@
 /* EasyLink API Header files */
 #include "easylink/EasyLink.h"
 /***** Defines *****/
-#include "radio.h"
-#include "uart.h"
+#include "App/radio.h"
+#include "App/uart.h"
 /* Pin driver handle */
 PIN_Handle ledPinHandle;
 PIN_State ledPinState;
@@ -28,8 +28,6 @@ PIN_Config pinTable[] = {
   Board_PIN_GLED | PIN_GPIO_OUTPUT_EN | PIN_GPIO_LOW | PIN_PUSHPULL | PIN_DRVSTR_MAX,
   Board_PIN_RLED | PIN_GPIO_OUTPUT_EN | PIN_GPIO_LOW | PIN_PUSHPULL | PIN_DRVSTR_MAX,
   PIN_TERMINATE         };
-
-
 
 int main(void)
 {

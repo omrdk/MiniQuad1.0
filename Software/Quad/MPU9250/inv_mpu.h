@@ -17,6 +17,29 @@
  *                  MPU9150 (or MPU6050 w/ AK8975 on the auxiliary bus)
  *                  MPU9250 (or MPU6500 w/ AK8963 on the auxiliary bus)
  */
+#include "koltypes.h"
+
+
+
+typedef struct { U08      tmp[16]; // [lsb] Ters
+                 F32      ofs[10]; // [lsb]
+                 F32      fsA;     // Acc Full Scale Range
+                 F32      fsG;     // Gyr Full Scale Range
+                 F32      raw[10]; // [lsb]
+                 F32      val[10]; // [lsb] -> val=(raw-ofs)
+                 F32      phy[10]; // Fiziksel b�y�kl�k :: [0..2]->g, [3..5]->deg/s
+                 F32      avg[ 6];
+                 F32      tem;     // [�C ] �ip S�cakl���
+                 U16      irq;     // MPU6050 Kesmesi
+                 U16      cn0;     // Kesme Sayac� @EXTI
+                 U16      cn1;     // Kesme Sayac� @main
+               } MPU_t;
+
+extern MPU_t mpu;
+
+void mpu_rd();
+
+
 
 #ifndef _INV_MPU_H_
 #define _INV_MPU_H_

@@ -1,6 +1,7 @@
 # FIXED
 
 main.obj: ../main.c
+main.obj: /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/System.h
 main.obj: /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/std.h
 main.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/stdarg.h
 main.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/sys/_types.h
@@ -17,7 +18,6 @@ main.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/
 main.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/sys/stdint.h
 main.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/machine/_stdint.h
 main.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/sys/_stdint.h
-main.obj: /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/System.h
 main.obj: /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/xdc.h
 main.obj: /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/Types.h
 main.obj: /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/Types__prologue.h
@@ -193,6 +193,8 @@ main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/kernel/tirtos/packages/ti/
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/kernel/tirtos/packages/ti/sysbios/knl/package/Clock_TimerProxy.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/PIN.h
 main.obj: /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/stdbool.h
+main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/Power.h
+main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/utils/List.h
 main.obj: ../Board.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/Board.h
 main.obj: ../CC2640R2_LAUNCHXL.h
@@ -214,7 +216,6 @@ main.obj: ../easylink/EasyLink.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/rf/RF.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/dpl/ClockP.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/dpl/SemaphoreP.h
-main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/utils/List.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/DeviceFamily.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/rf_common_cmd.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/rf_mailbox.h
@@ -226,10 +227,17 @@ main.obj: ../easylink/easylink_config.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/ADC.h
 main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/UART.h
 main.obj: ../koltypes.h
-main.obj: ../radio.h
-main.obj: ../flight.h
+main.obj: ../App/radio.h
+main.obj: ../App/flight.h
+main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/timer/GPTimerCC26XX.h
+main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/dpl/HwiP.h
+main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/inc/hw_gpt.h
+main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/event.h
+main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/../inc/hw_event.h
+main.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/timer.h
 
 ../main.c: 
+/home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/System.h: 
 /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/std.h: 
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/stdarg.h: 
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/sys/_types.h: 
@@ -246,7 +254,6 @@ main.obj: ../flight.h
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/sys/stdint.h: 
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/machine/_stdint.h: 
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/sys/_stdint.h: 
-/home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/System.h: 
 /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/xdc.h: 
 /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/Types.h: 
 /home/merdak/Apps/ti/ccs1020/xdctools_3_51_03_28_core/packages/xdc/runtime/Types__prologue.h: 
@@ -422,6 +429,8 @@ main.obj: ../flight.h
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/kernel/tirtos/packages/ti/sysbios/knl/package/Clock_TimerProxy.h: 
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/PIN.h: 
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/stdbool.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/Power.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/utils/List.h: 
 ../Board.h: 
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/Board.h: 
 ../CC2640R2_LAUNCHXL.h: 
@@ -443,7 +452,6 @@ main.obj: ../flight.h
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/rf/RF.h: 
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/dpl/ClockP.h: 
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/dpl/SemaphoreP.h: 
-/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/utils/List.h: 
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/DeviceFamily.h: 
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/rf_common_cmd.h: 
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/rf_mailbox.h: 
@@ -455,5 +463,11 @@ main.obj: ../flight.h
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/ADC.h: 
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/UART.h: 
 ../koltypes.h: 
-../radio.h: 
-../flight.h: 
+../App/radio.h: 
+../App/flight.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/timer/GPTimerCC26XX.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/dpl/HwiP.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/inc/hw_gpt.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/event.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/../inc/hw_event.h: 
+/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/devices/cc26x0r2/driverlib/timer.h: 

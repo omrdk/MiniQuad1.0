@@ -13,6 +13,6 @@
 	<ignoreDefaultDeviceSettings value="true"/>
 	<ignoreDefaultCCSSettings value="true"/>
 	<templateProperties value="id=rfEasyLinkRx_CC2640R2_LAUNCHXL_tirtos_ccs.projectspec.rfEasyLinkRx_CC2640R2_LAUNCHXL_tirtos_ccs,buildProfile=release,isHybrid=true"/>
-	<origin value="/home/merdak/BACKUPS/SRC/Quad_CTRL/2021_03_03/Quad_Ctrl_V124/Quad"/>
+	<origin value="/home/merdak/BACKUPS/SRC/Quad1.0/2021_04_01/Quad_Ctrl_V206/Quad"/>
 	<filesToOpen value=""/>
 </projectOptions>

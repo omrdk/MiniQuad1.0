@@ -10,48 +10,36 @@ C_SRCS += \
 ../CC2640R2_LAUNCHXL.c \
 ../CC2640R2_LAUNCHXL_fxns.c \
 ../ccfg.c \
-../main.c \
-../radio.c \
-../uart.c 
+../main.c 
 
 C_DEPS += \
 ./CC2640R2_LAUNCHXL.d \
 ./CC2640R2_LAUNCHXL_fxns.d \
 ./ccfg.d \
-./main.d \
-./radio.d \
-./uart.d 
+./main.d 
 
 OBJS += \
 ./CC2640R2_LAUNCHXL.obj \
 ./CC2640R2_LAUNCHXL_fxns.obj \
 ./ccfg.obj \
-./main.obj \
-./radio.obj \
-./uart.obj 
+./main.obj 
 
 OBJS__QUOTED += \
 "CC2640R2_LAUNCHXL.obj" \
 "CC2640R2_LAUNCHXL_fxns.obj" \
 "ccfg.obj" \
-"main.obj" \
-"radio.obj" \
-"uart.obj" 
+"main.obj" 
 
 C_DEPS__QUOTED += \
 "CC2640R2_LAUNCHXL.d" \
 "CC2640R2_LAUNCHXL_fxns.d" \
 "ccfg.d" \
-"main.d" \
-"radio.d" \
-"uart.d" 
+"main.d" 
 
 C_SRCS__QUOTED += \
 "../CC2640R2_LAUNCHXL.c" \
 "../CC2640R2_LAUNCHXL_fxns.c" \
 "../ccfg.c" \
-"../main.c" \
-"../radio.c" \
-"../uart.c" 
+"../main.c" 
 
 

@@ -11,12 +11,14 @@ ORDERED_OBJS += \
 "./CC2640R2_LAUNCHXL.obj" \
 "./CC2640R2_LAUNCHXL_fxns.obj" \
 "./ccfg.obj" \
-"./flight.obj" \
 "./main.obj" \
-"./radio.obj" \
+"./App/MadgwickAHRS.obj" \
+"./App/flight.obj" \
+"./App/fract_madgwick.obj" \
+"./App/kro.obj" \
+"./App/radio.obj" \
 "./BMP280/bmp280.obj" \
 "./MPU9250/inv_mpu.obj" \
-"./MPU9250/inv_mpu_dmp_motion_driver.obj" \
 "./easylink/EasyLink.obj" \
 "./easylink/easylink_config.obj" \
 "./smartrf_settings/smartrf_settings.obj" \
@@ -40,11 +42,13 @@ RMDIR := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include App/subdir_vars.mk
 -include BMP280/subdir_vars.mk
 -include MPU9250/subdir_vars.mk
 -include easylink/subdir_vars.mk
 -include smartrf_settings/subdir_vars.mk
 -include subdir_rules.mk
+-include App/subdir_rules.mk
 -include BMP280/subdir_rules.mk
 -include MPU9250/subdir_rules.mk
 -include easylink/subdir_rules.mk
@@ -162,13 +166,13 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "Quad.out"
 
 dependents:
-	-cd /home/merdak/KOLTEST/TIV10/tirtos_builds_CC2640R2_LAUNCHXL_release_ccs/Debug && $(MAKE) all
+	-cd /home/merdak/KOLTEST/TIV10/tirtos_builds_CC2640R2_LAUNCHXL_release_ccs/Debug && $(MAKE) clean all
 
 # Tool invocations
 Quad.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) /home/merdak/KOLTEST/TIV10/tirtos_builds_CC2640R2_LAUNCHXL_release_ccs/Debug/tirtos_builds_CC2640R2_LAUNCHXL_release_ccs.lib
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib -me --define=DeviceFamily_CC26X0R2 --define=SUPPORT_PHY_CUSTOM --define=SUPPORT_PHY_2_4_100KBPS2GFSK --define=SUPPORT_PHY_2_4_250KBPS2GFSK -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"Quad.map" -i"/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source" -i"/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/kernel/tirtos/packages" -i"/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Quad_linkInfo.xml" --rom_model -o "Quad.out" $(ORDERED_OBJS)
+	"/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib -me --define=DeviceFamily_CC26X0R2 --define=SUPPORT_PHY_CUSTOM --define=SUPPORT_PHY_2_4_100KBPS2GFSK --define=SUPPORT_PHY_2_4_250KBPS2GFSK -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -k --asm_listing --c_src_interlist -z -m"Quad.map" -i"/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source" -i"/root/ti/simplelink_cc2640r2_sdk_4_40_00_10/kernel/tirtos/packages" -i"/home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Quad_linkInfo.xml" --rom_model -o "Quad.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -182,8 +186,10 @@ Quad.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "CC2640R2_LAUNCHXL.obj" "CC2640R2_LAUNCHXL_fxns.obj" "ccfg.obj" "flight.obj" "main.obj" "radio.obj" "BMP280/bmp280.obj" "MPU9250/inv_mpu.obj" "MPU9250/inv_mpu_dmp_motion_driver.obj" "easylink/EasyLink.obj" "easylink/easylink_config.obj" "smartrf_settings/smartrf_settings.obj" "smartrf_settings/smartrf_settings_predefined.obj" 
-	-$(RM) "CC2640R2_LAUNCHXL.d" "CC2640R2_LAUNCHXL_fxns.d" "ccfg.d" "flight.d" "main.d" "radio.d" "BMP280/bmp280.d" "MPU9250/inv_mpu.d" "MPU9250/inv_mpu_dmp_motion_driver.d" "easylink/EasyLink.d" "easylink/easylink_config.d" "smartrf_settings/smartrf_settings.d" "smartrf_settings/smartrf_settings_predefined.d" 
+	-$(RM) "CC2640R2_LAUNCHXL.lst" "CC2640R2_LAUNCHXL_fxns.lst" "ccfg.lst" "main.lst" "App/MadgwickAHRS.lst" "App/flight.lst" "App/fract_madgwick.lst" "App/kro.lst" "App/radio.lst" "BMP280/bmp280.lst" "MPU9250/inv_mpu.lst" "easylink/EasyLink.lst" "easylink/easylink_config.lst" "smartrf_settings/smartrf_settings.lst" "smartrf_settings/smartrf_settings_predefined.lst" 
+	-$(RM) "CC2640R2_LAUNCHXL.obj" "CC2640R2_LAUNCHXL_fxns.obj" "ccfg.obj" "main.obj" "App/MadgwickAHRS.obj" "App/flight.obj" "App/fract_madgwick.obj" "App/kro.obj" "App/radio.obj" "BMP280/bmp280.obj" "MPU9250/inv_mpu.obj" "easylink/EasyLink.obj" "easylink/easylink_config.obj" "smartrf_settings/smartrf_settings.obj" "smartrf_settings/smartrf_settings_predefined.obj" 
+	-$(RM) "CC2640R2_LAUNCHXL.d" "CC2640R2_LAUNCHXL_fxns.d" "ccfg.d" "main.d" "App/MadgwickAHRS.d" "App/flight.d" "App/fract_madgwick.d" "App/kro.d" "App/radio.d" "BMP280/bmp280.d" "MPU9250/inv_mpu.d" "easylink/EasyLink.d" "easylink/easylink_config.d" "smartrf_settings/smartrf_settings.d" "smartrf_settings/smartrf_settings_predefined.d" 
+	-$(RM) "CC2640R2_LAUNCHXL.asm" "CC2640R2_LAUNCHXL_fxns.asm" "ccfg.asm" "main.asm" "App/MadgwickAHRS.asm" "App/flight.asm" "App/fract_madgwick.asm" "App/kro.asm" "App/radio.asm" "BMP280/bmp280.asm" "MPU9250/inv_mpu.asm" "easylink/EasyLink.asm" "easylink/easylink_config.asm" "smartrf_settings/smartrf_settings.asm" "smartrf_settings/smartrf_settings_predefined.asm" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

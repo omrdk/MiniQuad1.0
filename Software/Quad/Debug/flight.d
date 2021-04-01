@@ -234,6 +234,7 @@ flight.obj: ../Board.h
 flight.obj: /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/Board.h
 flight.obj: ../CC2640R2_LAUNCHXL.h
 flight.obj: ../MPU9250/inv_mpu.h
+flight.obj: /home/merdak/KOLTEST/TIV10/Quad/koltypes.h
 flight.obj: ../MPU9250/inv_mpu_dmp_motion_driver.h
 flight.obj: ../BMP280/bmp280.h
 flight.obj: ../BMP280/bmp280_defs.h
@@ -242,6 +243,10 @@ flight.obj: ../koltypes.h
 flight.obj: ../main.h
 flight.obj: ../flight.h
 flight.obj: ../radio.h
+flight.obj: ../kro.h
+flight.obj: ../koltypes.h
+flight.obj: ../main.h
+flight.obj: ../MadgwickAHRS.h
 
 ../flight.c: 
 /home/merdak/Apps/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/float.h: 
@@ -477,6 +482,7 @@ flight.obj: ../radio.h
 /root/ti/simplelink_cc2640r2_sdk_4_40_00_10/source/ti/drivers/Board.h: 
 ../CC2640R2_LAUNCHXL.h: 
 ../MPU9250/inv_mpu.h: 
+/home/merdak/KOLTEST/TIV10/Quad/koltypes.h: 
 ../MPU9250/inv_mpu_dmp_motion_driver.h: 
 ../BMP280/bmp280.h: 
 ../BMP280/bmp280_defs.h: 
@@ -485,3 +491,7 @@ flight.obj: ../radio.h
 ../main.h: 
 ../flight.h: 
 ../radio.h: 
+../kro.h: 
+../koltypes.h: 
+../main.h: 
+../MadgwickAHRS.h: 
